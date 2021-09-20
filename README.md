@@ -26,3 +26,9 @@ Major risks to the project include the following:
 The mitigation of the risks listed above will primary be handled utilizing project management techniques. The project will be managed utilizing the Scrum/Agile methodology. Members of the team bring copmplimentary expertise in front end and back end development that should allow team members to seek support internally for issues encountered during development. Various Map APIs will be evaluated to determine suitability. These include Google Maps, Radar, Mapbox etc. For the development of the application most of the APIs provide some free level of usage however if the app expands into a commercial application investment in a paid map API service will be required. 
 
 
+### Development Method:
+Scrum will be used for managing the development of this application. XXXXX will serve as the scrum master. 
+
+
+### Project Tracking Software:
+Trello will be used to track progress of the project. 
