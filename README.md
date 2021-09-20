@@ -17,7 +17,6 @@ A member of the Campr project team recently aquired a camper trailer and realize
 
 ### Project Risks:
 Major risks to the project include the following:
-1. Team members have little to no experiance working together. Team members have various degrees of familiarity with the frameworks, programming languages etc. required for implementation of this application. Additionally team members are remote and located in different areas of the country.
+1. Team members have little to no experiance working together. Additionally team members are remote and located in different areas of the country.
 2. Application will require a map API to provide a map based visual for campsites. Finding a cost appropriate (Free) API that has the required features may prove to be a challenge. 
-
-
+3. Team members have various degrees of familiarity with the frameworks, programming languages etc. required for implementation of this application.
