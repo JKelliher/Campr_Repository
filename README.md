@@ -20,3 +20,9 @@ Major risks to the project include the following:
 1. Team members have little to no experiance working together. Additionally team members are remote and located in different areas of the country.
 2. Application will require a map API to provide a map based visual for campsites. Finding a cost appropriate (Free) API that has the required features may prove to be a challenge. 
 3. Team members have various degrees of familiarity with the frameworks, programming languages etc. required for implementation of this application.
+
+
+### Mitigation Strategy:
+The mitigation of the risks listed above will primary be handled utilizing project management techniques. The project will be managed utilizing the Scrum/Agile methodology. Members of the team bring copmplimentary expertise in front end and back end development that should allow team members to seek support internally for issues encountered during development. Various Map APIs will be evaluated to determine suitability. These include Google Maps, Radar, Mapbox etc. For the development of the application most of the APIs provide some free level of usage however if the app expands into a commercial application investment in a paid map API service will be required. 
+
+
