@@ -36,8 +36,8 @@ Midigation for the risks listed above include the following:
 1. Mitigate through basic implementations or through selecting languages/frameworks with better fluency if possible
 2. Mitigate through strong emphasis on regular communications via email, Discord, phone calls.
 3. Mitigate through collaborative product requirements identification and documentation
-4. Ensure stories are appropriately sized, we start with an MVP, and identify any features we’d like to implement early on in the process
-5. Accept. This risk is unavoidable but all resources will work towards completion of assigned tasks
+4. Ensure stories are appropriately sized. We will start with an MVP, and identify any features we’d like to implement early on in the process
+5. Accept. Risk is unavoidable but all resources will work towards completion of assigned tasks
 
 
 ### Development Method:
