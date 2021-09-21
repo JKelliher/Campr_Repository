@@ -22,7 +22,7 @@ A member of the Campr project team recently aquired a camper trailer and realize
 
 ### Project Risks:
 Major risks to the project include the following:
-1. This project will require the use of new languages and working environments
+1. This project will require the use of new languages, frameworks and working environments
 2. The team has no prior experience working together. Additonally the teammembers are located remotely throughout the Unites States.
 3. There is a lack of some needed resources including a suitable Map API. 
 4. Requirements for the application are in early draft phase (currently).
