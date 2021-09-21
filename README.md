@@ -49,4 +49,4 @@ Scrum will be utilized for the Campr project lifecycle and a Kanban-based tracki
 
 
 ### Project Tracking Software:
-Trello will be usedto track progress to completion for the Campr project. Additional documentation (capacity planning, retro review) will be developed in Google sheets. 
+Trello will be used to track progress to completion for the Campr project. Additional documentation (capacity planning, retro review) will be developed in Google sheets. 
