@@ -25,7 +25,7 @@ Major risks to the project include the following:
 1. This project will require the use of new languages and working environments
 2. The team has no prior experience working together. Additonally the teammembers are located remotely throughout the Unites States.
 3. There is a lack of some needed resources including a suitable Map API. 
-4. Fuzzy requirements for the application (currently).
+4. Requirements for the application are in early draft phase (currently).
 5. The team has varied and limited resource availability (Team members are working full time jobs and have other coursework obligations)
 6. Required external APIs may have limited documentation or may be difficult to implement
 7. There is risk that there is a lack of low cost or free resources to help build out the Campr Project.
