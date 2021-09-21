@@ -22,13 +22,13 @@ A member of the Campr project team recently aquired a camper trailer and realize
 
 ### Project Risks:
 Major risks to the project include the following:
-1. New language or working environment
-2. No prior experience working with these team members
-3. Lack of some needed resources
-4. Fuzzy requirements (currently)
-5. Limited resource availability (team members with jobs and other coursework)
-6. Depending on external APIs, which may have limited documentation or may be difficult to implement
-7. Lack of low cost or free resources to help build out our project
+1. This project will require the use of new languages and working environments
+2. The team has no prior experience working together. Additonally the teammembers are located remotely throughout the Unites States.
+3. There is a lack of some needed resources include a suitable Map API. 
+4. Fuzzy requirements for the application (currently).
+5. The team has varied and limited resource availability (Team members are working full time jobs and have other coursework obligations)
+6. Required external APIs may have limited documentation or may be difficult to implement
+7. There is risk that there is a lack of low cost or free resources to help build out the Campr Project.
 
 
 ### Mitigation Strategy:
