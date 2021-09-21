@@ -41,7 +41,7 @@ Midigation for the risks listed above include the following:
 
 
 ### Development Method:
-Scrum will be utilized for the Campr project lifecycle and a Kanban-based tracking board with Trello to manage the team's biweekly sprint sessions.
+Scrum will be utilized for the Campr project lifecycle and a Kanban-based tracking board, Trello, will be used to manage the team's biweekly sprint sessions.
 * Biweekly standup scrum meetings will be held (as much as possible) to review what has been done, what will be done, and if there are any blockers. 
 * On off weeks from scrum meetings, backlog grooming sessions will be held where the team will take features from the product requirements document and translate them into stories, and ensure the backlog is appropriately groomed.
 * Every Monday/Wednesday/Friday (can change this) the team will do online check ins to report what we’re planning on working on in the team’s discord channel, and communicate if members have any blockers or are running into any bugs
