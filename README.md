@@ -22,29 +22,29 @@ A member of the Campr project team recently aquired a camper trailer and realize
 
 ### Project Risks:
 Major risks to the project include the following:
-1. This project will require the use of new languages, frameworks and working environments
+1. This project will require the use of new languages, frameworks and working environments.
 2. The team has no prior experience working together. Additonally the teammembers are located remotely throughout the Unites States.
 3. There is a lack of some needed resources including a suitable Map API. 
 4. Requirements for the application are in early draft phase (currently).
-5. The team has varied and limited resource availability (Team members are working full time jobs and have other coursework obligations)
-6. Required external APIs may have limited documentation or may be difficult to implement
+5. The team has varied and limited resource availability (Team members are working full time jobs and have other coursework obligations).
+6. Required external APIs may have limited documentation or may be difficult to implement.
 7. There may be a lack of low cost or free resources to help build out the Campr Project.
 
 
 ### Mitigation Strategy:
 Midigation for the risks listed above include the following:
-1. Mitigate through basic implementations or through selecting languages/frameworks with better fluency if possible
+1. Mitigate through basic implementations or through selecting languages/frameworks with better fluency if possible.
 2. Mitigate through strong emphasis on regular communications via email, Discord, phone calls.
-3. Mitigate through collaborative product requirements identification and documentation
-4. Ensure stories are appropriately sized. We will start with an MVP, and identify any features we’d like to implement early on in the process
-5. Accept. Risk is unavoidable but all resources will work towards completion of assigned tasks
+3. Mitigate through collaborative product requirements identification and documentation.
+4. Ensure stories are appropriately sized. We will start with an MVP, and identify any features we’d like to implement early on in the process.
+5. Accept. Risk is unavoidable but all resources will work towards completion of assigned tasks.
 
 
 ### Development Method:
 Scrum will be utilized for the Campr project lifecycle and a Kanban-based tracking board, Trello, will be used to manage the team's biweekly sprint sessions.
 * Biweekly standup scrum meetings will be held (as much as possible) to review what has been done, what will be done, and if there are any blockers. 
 * On off weeks from scrum meetings, backlog grooming sessions will be held where the team will take features from the product requirements document and translate them into stories, and ensure the backlog is appropriately groomed.
-* Every Monday/Wednesday/Friday (subject to change) the team will do online check ins to report what we’re planning on working on in the team’s discord channel, and communicate if members have any blockers or are running into any bugs
+* Every Monday/Wednesday/Friday (subject to change) the team will do online check ins to report what we’re planning on working on in the team’s discord channel, and communicate if members have any blockers or are running into any bugs.
 * Product requirements documentation will be developed to allow the team to understand, on a higher level, what the minimum viable product (mvp) will include and any features we’d like to add on if possible. This will be the document that is used to guide sprint planning. 
 
 
