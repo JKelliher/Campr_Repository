@@ -28,7 +28,7 @@ Major risks to the project include the following:
 4. Requirements for the application are in early draft phase (currently).
 5. The team has varied and limited resource availability (Team members are working full time jobs and have other coursework obligations)
 6. Required external APIs may have limited documentation or may be difficult to implement
-7. There is risk that there is a lack of low cost or free resources to help build out the Campr Project.
+7. There may be a lack of low cost or free resources to help build out the Campr Project.
 
 
 ### Mitigation Strategy:
