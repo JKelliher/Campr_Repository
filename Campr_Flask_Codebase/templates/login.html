@@ -10,15 +10,13 @@
     <label for="user_name">User Name:</label><br>
     <input type="text" id="user_name" name="user_name"><br>
     <label for="password">Password:</label><br>
-    <input type="text" id="password" name="password">
+    <input type="text" id="password" name="password"><br>
+    <a href=" {{ url_for('home') }} ">Submit</a></br>
   </form>
   
-  <a href=" ">Forgot login Credentials?</a></br>
-  <a href=" {{ url_for(new_user) }} ">New User?</a></br>
-  
+  <a href=" {{ url_for('retrieve_login') }} ">Forgot login Credentials?</a></br>
+  <a href=" {{ url_for('new_user') }} ">New User?</a></br>
   
   
 </body>
-
-
 
