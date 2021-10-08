@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 @app.route('/login/')
-def index():
+def login():
     return render_template('login.html')
 
 @app.route('/home/')
@@ -35,6 +35,10 @@ def profile():
 def edit_profile():
     return render_template('edit_profile.html')
 
-
+@app.route('/retrieve_login/')
+def retrieve_login():
+    return render_template('retrieve_login.html')
+    
+    
 if __name__ == '__main__':
     app.run(debug=True)
