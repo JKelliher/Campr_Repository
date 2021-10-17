@@ -1,10 +1,5 @@
-<head>
-  <title>Home Page</title>
-  
-</head>
-
-<body>
-  <h1>Home Page</h1>
+{% extends "layout.html" %}
+{% block content %}
   <h2>Top Campsites</h2>
   <p>PLACE HOLDER for top campsites to be displayed</p>
   
@@ -12,6 +7,5 @@
   <a href=" {{ url_for('search') }} ">Search Nearby</a><br>
   <a href=" {{ url_for('profile') }} ">Profile</a><br>
   <a href=" {{ url_for('login') }} ">Logout</a></br>
-  
-  
-</body>
+  {% endblock content %}
+

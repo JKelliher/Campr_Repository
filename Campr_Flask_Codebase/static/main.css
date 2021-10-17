@@ -1,0 +1,27 @@
+body {
+	background: #fafafa;
+	color: #333333;
+	margin-top: 5rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+	color: #444444;
+  }
+  .bg-steel {
+	background-color: #525f41;
+  }
+  .site-header .navbar-nav .nav-link {
+	color: #e9eff2;
+  }
+  .navbar-brand {
+  color:#ffffff;
+  font-size: 26px;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+	color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+	font-weight: 500;
+  }
+  

@@ -1,9 +1,5 @@
-<head>
-  <title>Create New Site</title>
-  
-</head>
-
-<body>
+{% extends "layout.html" %}
+{% block content %}
   <h2>New Site Entry</h2>
   <form>
     <label for="site_name">Site Name:</label><br>
@@ -34,8 +30,5 @@
   </form>
   
   <a href=" {{ url_for('home') }} ">back</a></br>
-  
-  
-  
-</body>
+  {% endblock content %}
 
