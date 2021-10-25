@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import sqlite3
 import sys
 import os
@@ -35,7 +34,7 @@ def fill(dbname):
         conn.close()
 
         
-def addProduct(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroom, Fees, Notes):
+def addCampsite(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroom, Fees, Notes):
     conn = sqlite3.connect(dbname)
     c = conn.cursor()
 
@@ -140,5 +139,6 @@ def addProduct(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroom
 def main():   
     create("CampTableDB")
     fill("CampTableDB")
-    addProduct("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "10/20/19", 5, "Campground", "Y", "N", "somenotes")
+    #addCampsite("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "10/20/19", 5, "Campground", "Y", "N", "somenotes")
 main()
+
