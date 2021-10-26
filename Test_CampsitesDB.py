@@ -26,7 +26,52 @@ class TestCase(unittest.TestCase):
         os.remove('test.db')
         pass
 
-    def test_addCampsite(self):
+    #this is a test to spot check a couple city state pairs
+    def Test_CityState(self):
+        conn = sqlite3.connect('CampTableDB')
+        c = conn.cursor()
+        print("Checking the database to see if cities are associated with the intended state")
+        for row in c.execute("SELECT * FROM CampSites;"):
+            if row[3] == "Allenspark":
+                print("checking that Allenspark is in Colorado...")
+                self.assertEqual(row[4], "CO", "Error Allenspark is not associated with CO")
+            if row[3] == "Moab":
+                print("checking that Moab is in UT...")
+                self.assertEqual(row[4], "UT", "Error Moab is not associated with UT")
+            if row[3] == "Alpine":
+                print("Checking that Alpine is associated with WY...")
+                self.assertEqual(row[4], "WY", "Error Alpine is not associated with WY")
+        print("Test_CitySate Passed!")
+        print("\n")
+        conn.commit()
+        conn.close()
+        pass
+
+
+
+
+    #This is a test to spot check that a couple of camps are associated with the correct state
+    def Test_CampsiteNames(self):
+        conn = sqlite3.connect('CampTableDB')
+        c = conn.cursor()
+        print("Spot checking database that campsites are associated with the right state...")
+        for row in c.execute("SELECT * FROM CampSites;"):
+            if row[1] == "Meeker Park":
+                print("checking Meeker Park is in CO...")
+                self.assertEqual(row[4], "CO", "Error...Meeker Park not associated with CO")
+            if row[1] == "North Alpine Loop":
+                print("checking North Alpine Loop is in WY...")
+                self.assertEqual(row[4], "WY", "Error... North Alpine Loop is not associated with WY")
+            if row[1] == "Masons Draw Campground":
+                print("checking Mason Draw Campgroun is in UT...")
+                self.assertEqual(row[4], "UT", "Error... Masons Draw is not associated with UT")
+        print("Test_CampsiteNames!")
+        print("\n")
+        conn.commit()
+        conn.close()
+        pass
+
+    def Test_addCampsite(self):
         conn = sqlite3.connect('CampTableDB')
         c = conn.cursor()
 
