@@ -15,17 +15,17 @@ def create(dbname):
 def fill(dbname):
         conn = sqlite3.connect(dbname)
         c = conn.cursor()
-        Sites = [(1, 'Peaceful Valley', '40.13196, -105.50705', 'Allenspark', 'CO', '5/15/20', 4, 'Campground', 'Y', 'Y', 'Nice site, could hear street noise from peak to peak highway though'), \
-                (2, 'Meeker Park', '40.24075, -105.53691', 'Allenspark', 'CO', '9/17/19', 3, 'Campground', 'Y', 'Y', 'Close to Longs Peak but otherwise not an exciting site'), \
-                (3, 'Saddlehorn Campground', '39.10557, -108.73306', 'Grand Junction', 'CO', '6/2/20', 5, 'Campground', 'Y', 'Y', 'Nice spot close to Colorado National Monument but very little shade'), \
+        Sites = [(1, 'Peaceful Valley', '40.13196, -105.50705', 'Allenspark', 'CO', '05/15/20', 4, 'Campground', 'Y', 'Y', 'Nice site, could hear street noise from peak to peak highway though'), \
+                (2, 'Meeker Park', '40.24075, -105.53691', 'Allenspark', 'CO', '09/17/19', 3, 'Campground', 'Y', 'Y', 'Close to Longs Peak but otherwise not an exciting site'), \
+                (3, 'Saddlehorn Campground', '39.10557, -108.73306', 'Grand Junction', 'CO', '06/2/20', 5, 'Campground', 'Y', 'Y', 'Nice spot close to Colorado National Monument but very little shade'), \
                 (4, 'Behind the Rocks', '39.41833, -109.46079', 'Moab', 'UT', '11/12/20', 5, 'Dispersed', 'N', 'N', 'Lots of places to put down camp but in BLM land so no amenities and need a WAG bag'), \
-                 (5, 'Masons Draw Campground', '38.54278, -109.30165', 'Moab', 'UT', '8/05/19', 5, 'Campground', 'Y', 'Y', 'In the trees near a great La Sal overlook'), \
-                 (6, 'Rabbit Ears Pass', '40.36932, -106.68415', 'Steamboat Springs', 'CO', '6/25/21', 4, 'Dispersed', 'N', 'N', 'Great spot but high elevation so expect cooler nights and dispersed camping so no amenities'), \
-                 (7, 'Dinosaur National Monument', '40.39770, -108.74606', 'Dinosaur', 'CO', '5/20/19', 3, 'Dispersed', 'N', 'N', 'The road in is a litte rough. 4x4 recommended but maybe not required. Near the Monument but otherwise, nothing special'), \
-                 (8, 'North Alpine Loop', '43.19820, -111.04252', 'Alpine', 'WY', '8/10/21', 4, 'Campground', 'Y', 'Y', 'Great little campground near Alpine with a host and very clean restrooms. Most sites have some trees for seperation but you are still close to your neighbor.'), \
-                 (9, 'Melvin BLM', '43.16567, -111.03739', 'Apline', 'WY', '8/13/21', 3, 'Dispersed', 'N', 'N', 'Basically in town but right across the way from Melvin brewing.'), \
-                 (10, 'Camp City', '39.87203, -106.87816', 'Crested Butte', 'CO', '9/20/21', 4, 'Dispersed', 'N', 'N', 'Close to town and with a great view down a valley but it has a number of spots that are all relatively close to each other'), \
-                 (11, 'Cement Creek', '38.82760, -106.83461', 'Crested Butte', 'CO', '9/20/19', 3, 'Campground', 'Y', 'Y', 'Close to town but no great views and sites are not great for a camper. Otherwise a nice spot in the trees for tent camping.')
+                 (5, 'Masons Draw Campground', '38.54278, -109.30165', 'Moab', 'UT', '08/05/19', 5, 'Campground', 'Y', 'Y', 'In the trees near a great La Sal overlook'), \
+                 (6, 'Rabbit Ears Pass', '40.36932, -106.68415', 'Steamboat Springs', 'CO', '06/25/21', 4, 'Dispersed', 'N', 'N', 'Great spot but high elevation so expect cooler nights and dispersed camping so no amenities'), \
+                 (7, 'Dinosaur National Monument', '40.39770, -108.74606', 'Dinosaur', 'CO', '05/20/19', 3, 'Dispersed', 'N', 'N', 'The road in is a litte rough. 4x4 recommended but maybe not required. Near the Monument but otherwise, nothing special'), \
+                 (8, 'North Alpine Loop', '43.19820, -111.04252', 'Alpine', 'WY', '08/10/21', 4, 'Campground', 'Y', 'Y', 'Great little campground near Alpine with a host and very clean restrooms. Most sites have some trees for seperation but you are still close to your neighbor.'), \
+                 (9, 'Melvin BLM', '43.16567, -111.03739', 'Apline', 'WY', '08/13/21', 3, 'Dispersed', 'N', 'N', 'Basically in town but right across the way from Melvin brewing.'), \
+                 (10, 'Camp City', '39.87203, -106.87816', 'Crested Butte', 'CO', '09/20/21', 4, 'Dispersed', 'N', 'N', 'Close to town and with a great view down a valley but it has a number of spots that are all relatively close to each other'), \
+                 (11, 'Cement Creek', '38.82760, -106.83461', 'Crested Butte', 'CO', '09/20/19', 3, 'Campground', 'Y', 'Y', 'Close to town but no great views and sites are not great for a camper. Otherwise a nice spot in the trees for tent camping.')
                 ]
 
 
@@ -86,6 +86,9 @@ def addCampsite(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroo
         raise ValueError
 
     #need a check to see if date in correct format mm/dd/yy
+    if not bool(re.match("^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.]\d\d$", Date)):
+        print("date not in the correct format. Please provide date in mm/dd/yy format.")
+        raise ValueError
     
     #check to see if a rating was provided
     if Rating == "":
@@ -141,6 +144,6 @@ def addCampsite(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroo
 def main():   
     create("CampTableDB")
     fill("CampTableDB")
-    #addCampsite("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "10/20/19", 5, "Campground", "Y", "N", "somenotes")
+    #addCampsite("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "05/20/19", 5, "Campground", "Y", "N", "somenotes")
 main()
 
