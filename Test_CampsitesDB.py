@@ -9,6 +9,7 @@ class TestCase(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        print("set up class")
         pass
 
     @classmethod
@@ -27,7 +28,7 @@ class TestCase(unittest.TestCase):
         pass
 
     #this is a test to spot check a couple city state pairs
-    def Test_CityState(self):
+    def test_CityState(self):
         conn = sqlite3.connect('CampTableDB')
         c = conn.cursor()
         print("Checking the database to see if cities are associated with the intended state")
@@ -51,7 +52,7 @@ class TestCase(unittest.TestCase):
 
 
     #This is a test to spot check that a couple of camps are associated with the correct state
-    def Test_CampsiteNames(self):
+    def test_CampsiteNames(self):
         conn = sqlite3.connect('CampTableDB')
         c = conn.cursor()
         print("Spot checking database that campsites are associated with the right state...")
@@ -71,7 +72,7 @@ class TestCase(unittest.TestCase):
         conn.close()
         pass
 
-    def Test_addCampsite(self):
+    def test_addCampsite(self):
         conn = sqlite3.connect('CampTableDB')
         c = conn.cursor()
 
@@ -107,6 +108,7 @@ class TestCase(unittest.TestCase):
         conn.commit()
         conn.close()
         pass
+
 
 
 # Main: Run Test Cases
