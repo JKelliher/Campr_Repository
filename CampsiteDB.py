@@ -77,8 +77,8 @@ def addCampsite(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroo
     #Check for all legal state abreviations    
     states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "RC", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
     if State not in states:
-	print("Need to provide a valid state abbreviation. Abbreviation should be capitolized.")
-	raise ValueError
+	    print("Need to provide a valid state abbreviation. Abbreviation should be capitolized.")
+	    raise ValueError
 
     #Check to see if a date was provided
     if Date == "":
