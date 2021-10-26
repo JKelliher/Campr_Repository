@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sqlite3
 import sys
 import os
@@ -17,7 +19,7 @@ def fill(dbname):
                 (2, 'Meeker Park', '40.24075, -105.53691', 'Allenspark', 'CO', '9/17/19', 3, 'Campground', 'Y', 'Y', 'Close to Longs Peak but otherwise not an exciting site'), \
                 (3, 'Saddlehorn Campground', '39.10557, -108.73306', 'Grand Junction', 'CO', '6/2/20', 5, 'Campground', 'Y', 'Y', 'Nice spot close to Colorado National Monument but very little shade'), \
                 (4, 'Behind the Rocks', '39.41833, -109.46079', 'Moab', 'UT', '11/12/20', 5, 'Dispersed', 'N', 'N', 'Lots of places to put down camp but in BLM land so no amenities and need a WAG bag'), \
-                 (5, 'Masons Draw Campgroung', '38.54278, -109.30165', 'Moab', 'UT', '8/05/19', 5, 'Campground', 'Y', 'Y', 'In the trees near a great La Sal overlook'), \
+                 (5, 'Masons Draw Campground', '38.54278, -109.30165', 'Moab', 'UT', '8/05/19', 5, 'Campground', 'Y', 'Y', 'In the trees near a great La Sal overlook'), \
                  (6, 'Rabbit Ears Pass', '40.36932, -106.68415', 'Steamboat Springs', 'CO', '6/25/21', 4, 'Dispersed', 'N', 'N', 'Great spot but high elevation so expect cooler nights and dispersed camping so no amenities'), \
                  (7, 'Dinosaur National Monument', '40.39770, -108.74606', 'Dinosaur', 'CO', '5/20/19', 3, 'Dispersed', 'N', 'N', 'The road in is a litte rough. 4x4 recommended but maybe not required. Near the Monument but otherwise, nothing special'), \
                  (8, 'North Alpine Loop', '43.19820, -111.04252', 'Alpine', 'WY', '8/10/21', 4, 'Campground', 'Y', 'Y', 'Great little campground near Alpine with a host and very clean restrooms. Most sites have some trees for seperation but you are still close to your neighbor.'), \
