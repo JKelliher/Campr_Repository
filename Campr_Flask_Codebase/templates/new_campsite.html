@@ -1,34 +1,141 @@
 {% extends "layout.html" %}
 {% block content %}
-  <h2>New Site Entry</h2>
-  <form>
-    <label for="site_name">Site Name:</label><br>
-    <input type="text" id="Site_name" name="Site_name"><br>
-    
-    <label for="GPS_coordinates">GPS Coordinates</label><br>
-    <input type="text" id="GPS_coordinates" name="GPS_Coordinates"><br>
-    
-    <label for="city">City:</label><br>
-    <input type="text" id="city" name="city"><br>
-    
-    <label for="State">State:</label><br>
-    <input type="text" id="State" name="State"><br>
-    
-    <label for="Date">Date:</label><br>
-    <input type="text" id="Date" name="Date"><br>
-    
-    <label for="Rating">Rating:</label><br>
-    <input type="text" id="Rating" name="Rating"><br>
-    
-    <label for="fees">Fees?(Optional):</label><br>
-    <input type="text" id="fees" name="fees"><br>
-    
-    <label for="notes">Notes:(Optional)</label><br>
-    <input type="text" id="notes" name="notes"><br>
-    
-    <a href=" {{ url_for('home') }} ">Submit</a></br>
-  </form>
+<div class="container">
+  <h2>Create a New Site</h2>
   
-  <a href=" {{ url_for('home') }} ">back</a></br>
-  {% endblock content %}
+  <form>
+  
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <label for="site_name">Site Name</label>
+      <input type="text" class="form-control" id="Site_name" placeholder="Enter Site Name">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="visit_date">Date of Visit</label>
+      <input type="text" class="form-control" id="visit_date" placeholder="mm-dd-yy">
+    </div>
+  
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity" placeholder="Enter City Name">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="gps_coordinates">GPS Coordinates</label>
+      <input type="text" class="form-control" id="gps_coordinates" placeholder="Enter GPS Coordinates">
+    </div>
+
+    <div class="form-group col-md-2">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>AL</option>
+        <option>AK</option>
+        <option>AZ</option>
+        <option>AR</option>
+        <option>CA</option>
+        <option>CO</option>
+        <option>CT</option>
+        <option>DE</option>
+        <option>FL</option>
+        <option>GA</option>
+        <option>HI</option>
+        <option>ID</option>
+        <option>IL</option>
+        <option>IN</option>
+        <option>IA</option>
+        <option>KS</option>
+        <option>KY</option>
+        <option>LA</option>
+        <option>ME</option>
+        <option>MD</option>
+        <option>MA</option>
+        <option>MI</option>
+        <option>MN</option>
+        <option>MS</option>
+        <option>MO</option>
+        <option>MT</option>
+        <option>NE</option>
+        <option>NV</option>
+        <option>NH</option>
+        <option>NJ</option>
+        <option>NM</option>
+        <option>NY</option>
+        <option>NC</option>
+        <option>ND</option>
+        <option>OH</option>
+        <option>OK</option>
+        <option>OR</option>
+        <option>PA</option>
+        <option>RI</option>
+        <option>SC</option>
+        <option>SD</option>
+        <option>TN</option>
+        <option>TX</option>
+        <option>UT</option>
+        <option>VT</option>
+        <option>VA</option>
+        <option>WA</option>
+        <option>WV</option>
+        <option>WI</option>
+        <option>WY</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="rating">Rating</label>
+      <select id="rating" class="form-control">
+        <option selected>Choose...</option>
+        <option>5.0</option>
+        <option>4.5</option>
+        <option>4.0</option>
+        <option>3.5</option>
+        <option>3.0</option>
+        <option>2.5</option>
+        <option>2.0</option>
+        <option>1.5</option>
+        <option>1.0</option>
+        <option>0.5</option>
+        <option>0.0</option>
+      </select>
+    </div>
+  </div>  
+
+  <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-md-1">Fees:</legend>
+        <div class="col-md-4">
+          <div class="custom-control custom-radio">
+            <input type="radio" id="yes_fee" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="yes_fee">Yes</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="no_fee" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="no_fee">No</label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+
+  <div class="form-group">
+    <label for="notes">Notes:</label>
+    <textarea class="form-control" id="notes" rows="3"></textarea>
+  </div>
+
+
+
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+  
+  <a href=" {{ url_for('home') }} ">Back</a></br>
+</div>
+{% endblock content %}
 

@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-  <h1>CAMPr</h1>
-  <h2>Welcome to your basecamp for finding basecamps</h2>
+<div class="container">
+  <h1 style="disply:block">CAMPr</h1><br>
+  <h2 style="disply:block">Welcome to your basecamp for finding basecamps</h2>
   <form>
     <label for="user_name">User Name:</label><br>
     <input type="text" id="user_name" name="user_name"><br>
@@ -12,5 +13,6 @@
   
   <a href=" {{ url_for('retrieve_login') }} ">Forgot login Credentials?</a></br>
   <a href=" {{ url_for('new_user') }} ">New User?</a></br>
-  {% endblock content %}
+</div>
+{% endblock content %}
 
