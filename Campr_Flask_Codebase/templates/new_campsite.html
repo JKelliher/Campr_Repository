@@ -9,13 +9,7 @@
     <div class="form-group col-md-8">
       <label for="site_name">Site Name</label>
       <input type="text" class="form-control" id="Site_name" placeholder="Enter Site Name">
-    </div>
-
-    <div class="form-group col-md-4">
-      <label for="visit_date">Date of Visit</label>
-      <input type="text" class="form-control" id="visit_date" placeholder="mm-dd-yy">
-    </div>
-  
+    </div> 
   </div>
   
   <div class="form-row">
@@ -24,10 +18,6 @@
       <input type="text" class="form-control" id="inputCity" placeholder="Enter City Name">
     </div>
 
-    <div class="form-group col-md-6">
-      <label for="gps_coordinates">GPS Coordinates</label>
-      <input type="text" class="form-control" id="gps_coordinates" placeholder="Enter GPS Coordinates">
-    </div>
 
     <div class="form-group col-md-2">
       <label for="inputState">State</label>
@@ -88,6 +78,20 @@
   </div>
 
   <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="gps_coordinates">GPS Coordinates</label>
+      <input type="text" class="form-control" id="gps_coordinates" placeholder="Enter GPS Coordinates">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="visit_date">Date of Visit</label>
+      <input type="text" class="form-control" id="visit_date" placeholder="mm-dd-yy">
+    </div>
+  </div>
+
+  <div class="form-row">
     <div class="form-group col-md-4">
       <label for="rating">Rating</label>
       <select id="rating" class="form-control">
@@ -132,10 +136,8 @@
 
 
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary mb-4">Submit</button>
 </form>
-  
-  <a href=" {{ url_for('home') }} ">Back</a></br>
 </div>
 {% endblock content %}
 
