@@ -33,25 +33,26 @@ def addUser(dbname, user_name, password, email):
     #check that a user_name was provided
     if user_name == "":
         print("user name required")
-	    raise ValueError
+        raise ValueError
     #check that the user_name is a string
     if type(user_name) != str:
-	    print("user name must be a string")
-	    raise ValueError
+        print("user name must be a string")
+        raise ValueError
 
     #check that the password is a correct length
     if len(password) < 5:
-	    print("password must be at least 5 characters long")
+        print("password must be at least 5 characters long")
+        raise ValueError
     
     #check that an email was provided
     if email == "":
-	    print("must provide an email")
-	    raise ValueError
+        print("must provide an email")
+        raise ValueError
 
     #check that the email is in a correct email format
     if not bool(re.match("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z0-9]{2,}$", email)):
         print("email not valid")
-        raise ValueErrror
+        raise ValueError
 
     idvalue = 0
     for row in c.execute("SELECT * FROM LoginCredentials;"):
