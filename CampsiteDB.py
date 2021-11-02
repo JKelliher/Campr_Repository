@@ -80,6 +80,7 @@ def addCampsite(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroo
         print("Need to provide a valid state abbreviation. Abbreviation should be capitolized.")
         raise ValueError
 
+
     #Check to see if a date was provided
     if Date == "":
         print("Need to provide a date for visit to the camp site")
