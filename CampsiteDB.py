@@ -119,17 +119,6 @@ def addCampsite(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroo
     newIdProd = idvalue + 1
     #print("newIDPROD: ", newIdProd)
 
-    #CatID = -1
-    #for row in c.execute("SELECT * FROM CampSites;"):
-    #    if idCamp == row[0]:
-    #        CatID = row[0]
-    #    #else:
-    #        #print("catID ValueError")
-    #        #raise ValueError
-    #if CatID == -1:
-    #    print("CatID ValueError")
-    #    raise ValueError
-
     #print("INPUT: ", newIdProd, site_name, GPS, City, State, Date, Rating, Type, Restroom, Fees, Notes)
     c.execute("INSERT INTO CampSites VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", (newIdProd, site_name, GPS, City, State, Date, Rating, Type, Restroom, Fees, Notes, Image))
     conn.commit()
@@ -139,6 +128,11 @@ def addCampsite(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroo
 def nearby(dbname, gps):
     conn = sqlite3.connect(dbname)
     c = conn.cursor()
+
+    #Check for GPS to be in correct format...
+    if not bool(re.match("((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))", GPS)):
+        print("GPS not in correct format. Please use decimal degrees format e.g. dd.dddddd, dd.ddddd")
+        raise ValueError
 
     #initialize a closest campsite to None and closes distance to 1,000,000
     compsite = None
@@ -161,18 +155,34 @@ def nearby(dbname, gps):
     #print("closest: ", closest)
     #print("campsite: ", compsite)
     #returns the ID of the campsite that is closest to input GPS
+    conn.commit()
+    conn.close()
     return compsite
 
-        
+def deletesite(dbname, delID):
+
+    conn = sqlite3.connect(dbname)
+    c = conn.cursor()
+
+    deletestatement = """DELETE FROM CampSites WHERE idCamp = ?"""
+    c.execute(deletestatement, (delID,))
+
+    conn.commit()
+    conn.close()
+
+
+
+
 #def main():
 #    create(sys.argv[1])
 #    fill(sys.argv[1])
 
 #hard coded for testing
 def main():   
-    create("CampTableDB")
-    fill("CampTableDB")
+    #create("CampTableDB")
+    #fill("CampTableDB")
     #nearby("CampTableDB", '43.21591, -111.06096')
-    addCampsite("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "05/20/19", 5, "Campground", "Y", "N", "somenotes", "https://github.com/JKelliher/Campr_Repository/blob/main/Campr_Images/Campr%20Images/IMG_1655.JPG")
+    #addCampsite("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "05/20/19", 5, "Campground", "Y", "N", "somenotes", "https://github.com/JKelliher/Campr_Repository/blob/main/Campr_Images/Campr%20Images/IMG_1655.JPG")
+    deletesite("CampTableDB", 12)
 main()
 
