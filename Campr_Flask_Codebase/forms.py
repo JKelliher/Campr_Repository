@@ -1,4 +1,6 @@
 from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileRequired, FileAllowed
+from werkzeug.utils import secure_filename
 from wtforms import StringField, SubmitField, SelectField, TextAreaField, RadioField
 from wtforms.validators import DataRequired, InputRequired, Length, Regexp
 
@@ -15,7 +17,7 @@ class camp_site_entry_form(FlaskForm):
 			  'IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV',
 			  'NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN',
 			  'TX','UT','VT','VA','WA','WV','WI','WY']
-	state = SelectField('State:', choices=states, validators =[InputRequired(), Length(min=2, max=2)])
+	state = SelectField('State:', choices=states, validators =[InputRequired()])
 
 	gps_coordinates = StringField('GPS Coordinates:', 
 		validators =[Regexp('((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))', message="Please enter GPS Coordinates in format: dd,dddd, dd,dddd")],
@@ -36,7 +38,9 @@ class camp_site_entry_form(FlaskForm):
 	fees = RadioField('Fees:', choices = ['Yes', 'No'], validators =[InputRequired(), Length(min=2, max=3)])
 
 	notes = TextAreaField('Notes:', 
-		validators =[InputRequired(), Length(min=2, max=3)],
+		validators =[],
 		render_kw={"placeholder":"Enter notes about campsite"})
 
 	submit = SubmitField('Submit')
+
+	upload_photo = FileField('Image:', validators=[FileAllowed(['jpg', 'png'], 'Only .jpg and .png are allowed.')])
