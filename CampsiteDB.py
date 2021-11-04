@@ -155,9 +155,24 @@ def nearby(dbname, gps):
     #print("closest: ", closest)
     #print("campsite: ", compsite)
     #returns the ID of the campsite that is closest to input GPS
+    conn.commit()
+    conn.close()
     return compsite
 
-        
+def deletesite(dbname, delID):
+
+    conn = sqlite3.connect(dbname)
+    c = conn.cursor()
+
+    deletestatement = """DELETE FROM CampSites WHERE idCamp = ?"""
+    c.execute(deletestatement, (delID,))
+
+    conn.commit()
+    conn.close()
+
+
+
+
 #def main():
 #    create(sys.argv[1])
 #    fill(sys.argv[1])
@@ -167,6 +182,7 @@ def main():
     #create("CampTableDB")
     #fill("CampTableDB")
     #nearby("CampTableDB", '43.21591, -111.06096')
-    addCampsite("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "05/20/19", 5, "Campground", "Y", "N", "somenotes", "https://github.com/JKelliher/Campr_Repository/blob/main/Campr_Images/Campr%20Images/IMG_1655.JPG")
+    #addCampsite("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "05/20/19", 5, "Campground", "Y", "N", "somenotes", "https://github.com/JKelliher/Campr_Repository/blob/main/Campr_Images/Campr%20Images/IMG_1655.JPG")
+    deletesite("CampTableDB", 12)
 main()
 
