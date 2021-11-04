@@ -81,28 +81,28 @@ class TestCase(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             print("check that a ValueError is raised on null string for Campsite name...")
-            CampsiteDB.addCampsite("CampTableDB", "", "42.94218, -109.79739", "Pinedale", "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.")
+            CampsiteDB.addCampsite("CampTableDB", "", "42.94218, -109.79739", "Pinedale", "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.", "")
         with self.assertRaises(ValueError):
             print("checking for a ValueError on non-string name for the campsite...")
-            CampsiteDB.addCampsite("CampTableDB", 5, "42.94218, -109.79739", "Pinedale", "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.")
+            CampsiteDB.addCampsite("CampTableDB", 5, "42.94218, -109.79739", "Pinedale", "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.", "")
         with self.assertRaises(ValueError):
             print("checking to see if a GPS was provided...")
-            CampsiteDB.addCampsite("CampTableDB", "Fremont Lake", "", "Pinedale", "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.")
+            CampsiteDB.addCampsite("CampTableDB", "Fremont Lake", "", "Pinedale", "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.", "")
         with self.assertRaises(ValueError):
             print("checking a ValueError for an incorect format of GPS...")
-            CampsiteDB.addCampsite("CampTableDB", 5, "4", "Pinedale", "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.")
+            CampsiteDB.addCampsite("CampTableDB", 5, "4", "Pinedale", "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.", "")
         with self.assertRaises(ValueError):
             print("checking for a ValueError if City not added...")
-            CampsiteDB.addCampsite("CampTableDB", 5, "42.94218, -109.79739", "", "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.")
+            CampsiteDB.addCampsite("CampTableDB", 5, "42.94218, -109.79739", "", "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.", "")
         with self.assertRaises(ValueError):
             print("checking for ValueError if city was not a string...")
-            CampsiteDB.addCampsite("CampTableDB", 5, "42.94218, -109.79739", 5, "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.")
+            CampsiteDB.addCampsite("CampTableDB", 5, "42.94218, -109.79739", 5, "WY", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.", "")
         with self.assertRaises(ValueError):
             print("checking for a ValueError if State not added...")
-            CampsiteDB.addCampsite("CampTableDB", 5, "42.94218, -109.79739", "Pinedale", "", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.")
+            CampsiteDB.addCampsite("CampTableDB", 5, "42.94218, -109.79739", "Pinedale", "", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.", "")
         with self.assertRaises(ValueError):
             print("checking for a ValueError if wrong abbreviation for state provided...")
-            CampsiteDB.addCampsite("CampTableDB", 5, "42.94218, -109.79739", "Pinedale", "ZW", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.")
+            CampsiteDB.addCampsite("CampTableDB", 5, "42.94218, -109.79739", "Pinedale", "ZW", "8/25/20", 5, "Campground", "Y", "Y", "Nice spot right on Fremont Lake and very close to Pinedale.", "")
 
         print("test_addProduct passed!")
         conn.commit()

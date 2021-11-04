@@ -1,7 +1,11 @@
 from flask import Flask, url_for, render_template
+from forms import camp_site_entry_form
+
 #from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = 'test_secret_key'
 
 camp_sites = [
     {
@@ -37,9 +41,12 @@ def home():
 def new_user():
     return render_template('new_user.html')
 
-@app.route('/new_campsite/')
+@app.route('/new_campsite/', methods=['GET', 'POST'])
 def new_campsite():
-    return render_template('new_campsite.html')
+    form = camp_site_entry_form()
+    if form.validate_on_submit():
+        return '<h1>date of visit is {}.</h1>'.format(form.date_of_visit.data)
+    return render_template('new_campsite.html', form=form)
 
 @app.route('/search/')
 def search():
