@@ -170,7 +170,25 @@ def deletesite(dbname, delID):
     conn.commit()
     conn.close()
 
+def bestsites(dbname):
+    conn = sqlite3.connect(dbname)
+    c = conn.cursor()
 
+    #sort the table by rating and store the idcamp in bestlist
+    bestlist = []
+    for row in c.execute("SELECT * FROM Campsites ORDER BY Rating DESC;"):
+        bestlist.append(row[0])
+
+    #only return the top 5 sites
+    final_list = []
+    i = 0
+    while i < 5:
+        final_list.append(bestlist[i])
+        i = i + 1
+    print("final_list: ", final_list)
+    conn.commit()
+    conn.close()
+    return final_list
 
 
 #def main():
@@ -179,10 +197,11 @@ def deletesite(dbname, delID):
 
 #hard coded for testing
 def main():   
-    #create("CampTableDB")
-    #fill("CampTableDB")
+    create("CampTableDB")
+    fill("CampTableDB")
     #nearby("CampTableDB", '43.21591, -111.06096')
     #addCampsite("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "05/20/19", 5, "Campground", "Y", "N", "somenotes", "https://github.com/JKelliher/Campr_Repository/blob/main/Campr_Images/Campr%20Images/IMG_1655.JPG")
-    deletesite("CampTableDB", 12)
+    #deletesite("CampTableDB", 12)
+    #bestsites("CampTableDB")
 main()
 
