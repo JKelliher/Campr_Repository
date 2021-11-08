@@ -4,13 +4,11 @@ body {
 	margin-top: 5rem;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4 h5{
 	color: #444444;
 }
 
-h5 {
-  color: #ddd2ce;
-}
+
 
 .bg-steel {
 background-color: #525f41;
@@ -43,7 +41,7 @@ font-weight: 500;
 }
 
 .buttonimage {
-  opacity:  0.65;
+  opacity:  0.75;
   height:  100%;
   width:  100%;
   border-radius: 10px;
@@ -60,7 +58,7 @@ font-weight: 500;
 
 .centered {
   position: absolute;
-  top: 40%;
+  top: 47.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: xxx-large;
@@ -77,3 +75,30 @@ font-weight: 500;
   color: white;
   font-weight: bold;
 }
+
+#mission_statement{
+  font-style: italic;
+  font-weight: bold;
+}
+
+.aboutimage {
+  opacity:  1;
+  height:  50%;
+  width:  100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+#about_background{
+   background: 
+    linear-gradient(to bottom,
+      rgba(0,0,0,1), 
+      rgba(255,255,255,0)
+    ),
+    url("../static/images/tent.jpg");
+  background-size: cover;
+  height: 100vh;
+
+}
+
+background: linear-gradient(to bottom,  rgba(255,255,255,0), white 100%);

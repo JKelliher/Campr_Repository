@@ -71,6 +71,10 @@ def edit_profile():
 @app.route('/retrieve_login/')
 def retrieve_login():
     return render_template('retrieve_login.html')
+
+@app.route('/about/')
+def about():
+    return render_template('about.html')
     
     
 if __name__ == '__main__':
