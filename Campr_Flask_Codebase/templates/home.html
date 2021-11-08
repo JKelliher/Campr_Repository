@@ -1,11 +1,29 @@
-{% extends "layout.html" %}
+{% extends "layout_sticky.html" %}
 {% block content %}
-<div class="col-md-8">
-  <a href=" {{ url_for('new_campsite') }} ">New Site Entry</a><br>
-  <a href=" {{ url_for('search') }} ">Search Nearby</a><br>
-  <a href=" {{ url_for('profile') }} ">Profile</a><br>
-  <a href=" {{ url_for('login') }} ">Logout</a></br>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <a href=" {{ url_for('new_campsite') }} ">
+        <img class ="buttonimage" src="../static/images/cascade.jpg">
+        <div class="centered">NEW SITE</div>
+      </a>
+    </div>
+    <div class="col order-1">
+      <a href=" {{ url_for('search') }} ">
+        <img class ="buttonimage" src="../static/images/lakecamping.jpg">
+        <div class="centered">SEARCH NEARBY</div>
+      </a>
+    </div>
+    <div class="col order-5">
+      <a href=" {{ url_for('profile') }} ">
+        <img class ="buttonimage" src="../static/images/campfire.jpg">
+        <div class="centered">PROFILE</div>
+      </a>
+    </div>
   </div>
+</div>
+
 
 <div class="container-fluid">
   <div class="content-section">
