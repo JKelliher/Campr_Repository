@@ -43,16 +43,35 @@ font-weight: 500;
 }
 
 .buttonimage {
-  opacity:  0.6;
+  opacity:  0.65;
   height:  100%;
   width:  100%;
   border-radius: 10px;
+}
+
+.headerimage {
+  opacity:  0.65;
+  height:  30%;
+  width:  100%;
+  border-radius: 10px;
+  margin: -5px;
+  overflow: hidden;
 }
 
 .centered {
   position: absolute;
   top: 40%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: xxx-large;
+  color: white;
+  font-weight: bold;
+}
+
+.left{
+  position: absolute;
+  top: 40%;
+  left: 15%;
   transform: translate(-50%, -50%);
   font-size: xxx-large;
   color: white;

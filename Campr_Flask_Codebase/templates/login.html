@@ -1,18 +1,55 @@
-{% extends "layout.html" %}
+{% extends "layout_sticky.html" %}
 {% block content %}
-<div class="container">
-  <h1 style="disply:block">CAMPr</h1><br>
-  <h2 style="disply:block">Welcome to your basecamp for finding basecamps</h2>
-  <form>
-    <label for="user_name">User Name:</label><br>
-    <input type="text" id="user_name" name="user_name"><br>
-    <label for="password">Password:</label><br>
-    <input type="text" id="password" name="password"><br>
-    <a href=" {{ url_for('home') }} ">Submit</a></br>
-  </form>
-  
-  <a href=" {{ url_for('retrieve_login') }} ">Forgot login Credentials?</a></br>
-  <a href=" {{ url_for('new_user') }} ">New User?</a></br>
+<div class="container" style="margin-bottom: 20px;">
+  <div>
+    <div class="row">
+      <div class="col-6">
+        
+        <h1 tyle="disply:block;" align="center">CAMPr</h1>
+        <br>
+        <h3 style="disply:block;" align="center">Welcome to your basecamp for finding basecamps.</h3>
+        <br>
+        
+        <form>
+          <div form-group> 
+            <label for="user_name">User Name:</label><br>
+            <input class="form-control" id="user_name" name="user_name"><br>
+            <label for="password">Password:</label><br>
+            <input class="form-control" id="password" name="password"><br>
+          </div>
+          
+
+          <div form-group style="padding:0; margin-left:0; margin-top: 10px;">
+            <div class="row">
+              <div class="col-12">
+                <a href=" {{ url_for('home') }} ">
+                  <button type="button" class="btn btn-primary btn-lg btn-block">Login</button>
+                </a></br>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-6" align="center">
+                <a href=" {{ url_for('retrieve_login') }} ">Forgot User Name?</a>
+              </div>
+              <div class="col-6" align="center">
+                <a href=" {{ url_for('new_user') }} ">New User?</a>
+              </div>
+            </div>
+          </div>
+        
+        </form>
+      </div>
+
+      <div class="col-6">
+        <img class ="buttonimage" src="../static/images/aspencamping.jpg">
+      </div>
+
+
+
+    </div>
+  </div>
 </div>
+
 {% endblock content %}
 

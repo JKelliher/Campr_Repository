@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+<div class="container">
   <h2>Search</h2>
   <form>
     <label for="search">Search Nearby (GPS Coordinates):</label><br>
@@ -9,5 +10,6 @@
   </form>
   
   <a href=" {{ url_for('home') }} ">back</a></br>
+</div>
   {% endblock content %}
 
