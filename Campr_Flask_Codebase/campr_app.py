@@ -33,6 +33,10 @@ camp_sites = [
 def login():
     return render_template('login.html')
 
+@app.route('/register/')
+def register():
+    return render_template('new_user.html')
+
 @app.route('/home/')
 def home():
     return render_template('home.html', title='Home Page', camp_sites=camp_sites)

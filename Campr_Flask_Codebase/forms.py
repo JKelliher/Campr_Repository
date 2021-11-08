@@ -44,3 +44,22 @@ class camp_site_entry_form(FlaskForm):
 	submit = SubmitField('Submit')
 
 	upload_photo = FileField('Image:', validators=[FileAllowed(['jpg', 'png'], 'Only .jpg and .png are allowed.')])
+
+
+
+
+# class new_user_form(FlaskForm):
+# 	email = StringField('Email: ',
+# 		validators =[InputRequired(), Length(min = 6, max = 35)],
+# 		render_kw={"placeholder":"Email"})
+
+# 	password = StringField('Password: ',
+# 		validators=[InputRequired(), Length(min = 6, max = 25)],
+# 		render_kw={"placeholder":"Password"})
+
+# 	accept_rules = BooleanField('I accept the leave no trace principles',
+# 		validators = [InputRequired()]
+
+
+
+	
