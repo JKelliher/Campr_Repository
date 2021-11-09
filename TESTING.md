@@ -227,7 +227,7 @@ Verify that built in header links to the correct page will user is on each page.
 **Description** \
     This test will verify the header for the web application navigates to the correct pages\
 **Pre-Conditions** \
-    web application has been opened. See steps 1 thru 5 listed user the User Acceptance Testing for details on opening the web application is browser. \
+    Campr web application has been opened in local browser. See steps 1 thru 5 listed user the "User Acceptance Testing" header for details on opening the web application in you local browser. 
 **Test Steps** \
 1. Navigate to the login page. Application will be at the login by default upon opening. 
 2. Select the "Home" link on the header. Verify link takes you to the home page of the web application "/home". 
@@ -238,7 +238,7 @@ Verify that built in header links to the correct page will user is on each page.
 7. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register". 
    
     
-    run 'python Test_CampsitesDB.py' \
+ 
 **Expected Results** \
     you should see the following text and pass one of the tests \
     >".Checking the database to see if cities are associated with the intended state \
