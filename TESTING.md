@@ -334,7 +334,7 @@ Navigation bar from the Edit Profile Page:
 10. Select the "Register" link on the header. Verify link loads the new user registration page "/register".
 
 **Expected Results** \
-Each of the following links on the header navagetes to the coresponding page while user is on any of the pages in the web application (Home, :
+Each of the following links on the header navagetes to the coresponding page while user is on any of the pages in the web application:
 1. Campr navigates to "/login"
 2. Home navigates to "/home"
 3. About navigates to "/about"
@@ -457,14 +457,14 @@ Navigation bar from the Edit Profile Page:
 8. Select the "search" link on the footer. Verify link loads the search page "/search".
 
 **Expected Results** \
-Each of the following links on the header navagetes to the coresponding page while user is on any of the pages in the web application (Home, :
+Each of the following links on the footer navagetes to the coresponding page while user is on any of the pages in the web application:
 1. Login navigates to "/login"
 2. About navigates to "/about"
 3. New Campsite navigates to "/new_campsite"
 4. Search navigates to "/Search"
     
 **Actual Results** \
-On Each of the following pages of the web application the links of the header linked to the correspoinding page listed in expected result above:
+On Each of the following pages of the web application the links of the footer linked to the correspoinding page listed in expected result above:
 1. Login page (All 4 footer elements linked to correct page)
 2. Home page (All 4 footer elements linked to correct page)
 3. About page (All 4 footer elements linked to correct page)
