@@ -85,6 +85,4 @@ class TestCase(unittest.TestCase):
 # Main: Run Test Cases
 if __name__ == '__main__':
     unittest.main()
-    #file_path_login = '/Campr_Repository/LoginDB'
-    #lsos.remove(file_path_login)
 
