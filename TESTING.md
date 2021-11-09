@@ -227,17 +227,50 @@ Verify that built in header links to the correct page will user is on each page.
 **Description** \
     This test will verify the header for the web application navigates to the correct pages\
 **Pre-Conditions** \
-    Campr web application has been opened in local browser. See steps 1 thru 5 listed user the "User Acceptance Testing" header for details on opening the web application in you local browser. 
-**Test Steps** \
+    Campr web application has been opened in local browser. See steps 1 thru 5 listed user the "User Acceptance Testing" header for details on opening the web application in you local browser. \
+**Test Steps:** \
+Navigation bar from the login page:
 1. Navigate to the login page. Application will be at the login by default upon opening. 
-2. Select the "Home" link on the header. Verify link takes you to the home page of the web application "/home". 
-3. Navigate back to /login. 
-4. Select the "About" link on the header. Verify link takes you to the about page of the web application "/about". 
-5. Navigate back to /login. 
-6. Select the "Login" link on the header. Verify link reloads the login page. 
-7. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register". 
+2. Select the CAMPr link on the header. Verify link reloads the login page "/login"
+3. Select the "Home" link on the header. Verify link takes you to the home page of the web application "/home". 
+4. Navigate back to /login. 
+5. Select the "About" link on the header. Verify link takes you to the about page of the web application "/about". 
+6. Navigate back to /login. 
+7. Select the "Login" link on the header. Verify link reloads the login page. 
+8. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register". 
+  
+Navigation bar from the home page:
+1. Navigate to the home page. Add "/home" to the base url to get there if home link on header does not work. 
+2. Select the CAMPr link on the header. Verify link loads the login page "/login"
+3. Navigate back to "/home"
+4. Select the "Home" link on the header. Verify link reloads home page "/home". 
+5. Select the "About" link on the header. Verify link takes you to the about page of the web application "/about". 
+6. Navigate back to "/home". 
+7. Select the "Login" link on the header. Verify link loads the login page "/login". 
+8. Navigate back to "/home".
+9. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register".
+
+Navigation bar from the about page:
+1. Navigate to the about page. Add "/about" to the base url to get there if home link on header does not work. 
+2. Select the CAMPr link on the header. Verify link loads the login page "/login"
+3. Navigate back to "/about"
+4. Select the "Home" link on the header. Verify link loads home page "/home". 
+5. Navigate back to "/about"
+6. Select the "About" link on the header. Verify link reloads the about page "/about". 
+8. Select the "Login" link on the header. Verify link loads the login page "/login".
+9. Navigate back to "/about". 
+10. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register".
    
-    
+Navigation bar from the about Register Page:
+1. Navigate to the about page. Add "/about" to the base url to get there if home link on header does not work. 
+2. Select the CAMPr link on the header. Verify link loads the login page "/login"
+3. Navigate back to "/about"
+4. Select the "Home" link on the header. Verify link loads home page "/home". 
+5. Navigate back to "/about"
+6. Select the "About" link on the header. Verify link reloads the about page "/about". 
+8. Select the "Login" link on the header. Verify link loads the login page "/login".
+9. Navigate back to "/about". 
+10. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register".
  
 **Expected Results** \
     you should see the following text and pass one of the tests \
@@ -261,4 +294,4 @@ Verify that built in header links to the correct page will user is on each page.
 **Notes** \
     N/A \
 **Post-Conditions** \
-    user may need to remove the CampTableDB before performing subsequent tests. 
+    N/A \
