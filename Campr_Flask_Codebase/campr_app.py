@@ -49,7 +49,10 @@ def new_user():
 def new_campsite():
     form = camp_site_entry_form()
     if form.validate_on_submit():
-        return '<h1>date of visit is {}.</h1>'.format(form.date_of_visit.data)
+        return """
+        <h1>New Campsite form successfully submitted.</h1>
+        <a href="/new_campsite">Back</a>
+        """
     return render_template('new_campsite.html', form=form)
 
 @app.route('/search/')
