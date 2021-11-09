@@ -358,7 +358,7 @@ On Each of the following pages of the web application the links of the header li
 **Notes** \
     N/A \
 **Post-Conditions** \
-    N/A \
+    N/A 
     
     
  ## Use Case 2: Verify web app footer navigation funcitons as expected.
@@ -480,7 +480,7 @@ On Each of the following pages of the web application the links of the footer li
 **Notes** \
     N/A \
 **Post-Conditions** \
-    N/A \
+    N/A 
 
 ## Use Case 3: Create New Campsite Form Correctly Validates User input.
 Verify that the user entry form on the Create New Campsite page properly validates user input \
@@ -534,4 +534,4 @@ Form does not submit unless the following is true:
 **Notes** \
     Form submission does not currently send data to database. Submission loads temporary page. \
 **Post-Conditions** \
-    N/A \
+    N/A 
