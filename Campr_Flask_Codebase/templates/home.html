@@ -3,22 +3,24 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
-      <a href=" {{ url_for('new_campsite') }} ">
-        <img class ="buttonimage" src="../static/images/cascade.jpg">
-        <div class="centered">NEW SITE</div>
-      </a>
-    </div>
     <div class="col order-1">
       <a href=" {{ url_for('search') }} ">
         <img class ="buttonimage" src="../static/images/lakecamping.jpg">
         <div class="centered">SEARCH NEARBY</div>
       </a>
     </div>
-    <div class="col order-5">
+
+    <div class="col order-2">
+      <a href=" {{ url_for('new_campsite') }} ">
+        <img class ="buttonimage" src="../static/images/cascade.jpg">
+        <div class="centered" align="centered">CREATE NEW SITE</div>
+      </a>
+    </div>
+    
+    <div class="col order-3">
       <a href=" {{ url_for('profile') }} ">
         <img class ="buttonimage" src="../static/images/campfire.jpg">
-        <div class="centered">PROFILE</div>
+        <div class="centered" align="centered">PROFILE</div>
       </a>
     </div>
   </div>
@@ -58,5 +60,5 @@
     </div>
   </div>
 </div>
-  {% endblock content %}
+{% endblock content %}
 

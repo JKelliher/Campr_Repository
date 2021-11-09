@@ -58,7 +58,7 @@ def search():
 
 @app.route('/search_result/')
 def search_result():
-    return render_template('search_result.html')
+    return render_template('search_result.html', camp_sites=camp_sites)
 
 @app.route('/profile/')
 def profile():
