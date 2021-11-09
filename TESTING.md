@@ -5,6 +5,9 @@ Kelsey Kosnik \
 Jacob Unger
 
 # Testing
+
+TMPORTANT: A Milestone3 branch was created to capture the state of the repository at time of submission. Copy this branch for testing outlined in this document.
+
 Note: The following are packages required to run testing of this project: \
 Python3 \
 Sqlite3 \
