@@ -2,7 +2,7 @@
 Joseph Kelliher \
 Matthew Martin \
 Kelsey Kosnik \
-Jacob Unger \
+Jacob Unger
 
 # Testing
 Note: The following are packeges required to run testing of this project: \
