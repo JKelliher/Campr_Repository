@@ -512,7 +512,7 @@ Verify that the user entry form on the Create New Campsite page properly validat
 21. Select Submit
 22. Verify user is prompted that the Fees and Restrooms fields are required.
 23. Select "Yes" for both fees and restrooms.
-24. Select "Submit"\
+24. Select "Submit"
 25. Verify form successfully submitted.
 
 **Expected Results** \
@@ -532,6 +532,6 @@ Form does not submit unless the following is true:
 **Status (Pass/Fail)** \
     Pass \
 **Notes** \
-    Form submission does not currently send data to database. Submission loads temporary page. 
+    Form submission does not currently send data to database. Submission loads temporary page. \
 **Post-Conditions** \
     N/A \
