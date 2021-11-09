@@ -1,6 +1,6 @@
-#Automated Test Cases
-**Use Case1: Validate starting DB has correct City/State pairs for entries**
-    Verify that the starting DB has the correct City/State pairs for known entries
+#Automated Test Cases \
+**Use Case1: Validate starting DB has correct City/State pairs for entries** \
+    Verify that the starting DB has the correct City/State pairs for known entries \
 **Description**
     Test the starting DB entries to ensure it was set up correctly
 **Pre-Conditions**
