@@ -5,7 +5,7 @@ Kelsey Kosnik \
 Jacob Unger
 
 # Testing
-Note: The following are packeges required to run testing of this project: \
+Note: The following are packages required to run testing of this project: \
 Python3 \
 Sqlite3 \
 Flask \
