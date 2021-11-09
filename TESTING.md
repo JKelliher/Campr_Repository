@@ -213,10 +213,10 @@ Sqlite3 \
 Flask \
 Flask-WTForms \
 Perform the following to open the web application:
-1. After Clonging the repository open the command terminal. \
-2. From the command line Navigate to the Campr_Repository directory. \
-3. Navigate to Campr_Flask_Codebase directory.\
-4. Run campr_app.py using python 3. \
+1. After Clonging the repository open the command terminal. 
+2. From the command line Navigate to the Campr_Repository directory. 
+3. Navigate to Campr_Flask_Codebase directory.
+4. Run campr_app.py using python 3. 
 5. open the URL for the web application. It should be displayed with text similar to "Running on http://127.0.1:5000/ (Press CTRL+C to quit)"
 \
 \
@@ -229,13 +229,13 @@ Verify that built in header links to the correct page will user is on each page.
 **Pre-Conditions** \
     web application has been opened. See steps 1 thru 5 listed user the User Acceptance Testing for details on opening the web application is browser. \
 **Test Steps** \
-    1. Navigate to the login page. Application will be at the login by default upon opening. \
-    2. Select the "Home" link on the header. Verify link takes you to the home page of the web application "/home". \
-    3. Navigate back to /login. \
-    4. Select the "About" link on the header. Verify link takes you to the about page of the web application "/about". \
-    5. Navigate back to /login. \
-    6. Select the "Login" link on the header. Verify link reloads the login page. \
-    7. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register". \
+1. Navigate to the login page. Application will be at the login by default upon opening. 
+2. Select the "Home" link on the header. Verify link takes you to the home page of the web application "/home". 
+3. Navigate back to /login. 
+4. Select the "About" link on the header. Verify link takes you to the about page of the web application "/about". 
+5. Navigate back to /login. 
+6. Select the "Login" link on the header. Verify link reloads the login page. 
+7. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register". 
    
     
     run 'python Test_CampsitesDB.py' \
