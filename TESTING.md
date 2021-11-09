@@ -22,7 +22,7 @@ Verify that the starting DB has the correct City/State pairs for known entries \
     CampTableDB does not exist otherwise user will get an error that it already exits and test will not run. \
 **Test Steps** \
     Navigate to the Campr_Repository \
-    run 'python Test_CampsitesDB.py \
+    run 'python Test_CampsitesDB.py' \
 **Expected Results** \
     you should see the following text and pass one of the tests \
     >".Checking the database to see if cities are associated with the intended state \
@@ -55,7 +55,7 @@ Verify that the starting DB has the correct Campsite names at the expected campI
     CampTableDB does not exist otherwise user will get an error that it already exits and test will not run. \
 **Test Steps** \
     Navigate to the Campr_Repository \
-    run 'python Test_CampsitesDB.py \
+    run 'python Test_CampsitesDB.py' \
 **Expected Results** \
     you should see the following text and pass one of the tests \
     >"Spot checking database that campsites are associated with the right state... \
@@ -86,7 +86,7 @@ Verify that the the addCampsite function works as expected \
     CampTableDB does not exist otherwise user will get an error that it already exits and test will not run. \
 **Test Steps** \
     Navigate to the Campr_Repository \
-    run 'python Test_CampsitesDB.py \
+    run 'python Test_CampsitesDB.py' \
 **Expected Results** \
     you should see the following text and pass one of the tests \
     >".check that a ValueError is raised on null string for Campsite name... \
