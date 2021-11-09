@@ -1,4 +1,4 @@
-# Automated Test Cases \
+# Automated Test Cases 
 **Use Case1: Validate starting DB has correct City/State pairs for entries** \
     Verify that the starting DB has the correct City/State pairs for known entries \
 **Description** \
