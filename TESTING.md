@@ -354,11 +354,11 @@ On Each of the following pages of the web application the links of the header li
 9. Edit Profile Page (All 5 header elements linked to correct page)
 
 **Status (Pass/Fail)** \
-    Pass 
+    Pass \
 **Notes** \
-    N/A 
+    N/A \
 **Post-Conditions** \
-    N/A 
+    N/A \
     
     
  ## Use Case 2: Verify web app footer navigation funcitons as expected.
@@ -476,9 +476,62 @@ On Each of the following pages of the web application the links of the footer li
 9. Edit Profile Page (All 4 footer elements linked to correct page)
 
 **Status (Pass/Fail)** \
-    Pass 
+    Pass \
 **Notes** \
-    N/A 
+    N/A \
 **Post-Conditions** \
-    N/A 
+    N/A \
 
+## Use Case 3: Create New Campsite Form Correctly Validates User input.
+Verify that the user entry form on the Create New Campsite page properly validates user input \
+**Description** \
+    This test will very that the user entry form on the Create New Campsite properly validates user input. The form was build with input validators that match the database contraints. \
+**Pre-Conditions** \
+    Campr web application has been opened in local browser. See steps 1 thru 5 listed user the "User Acceptance Testing" header for details on opening the web application in you local browser. \
+**Test Steps** \
+1. Navigate to the Create New Campsite page. Add "/new_campsite" to the base url or user page links to get the new campsite page.
+2. Select the "submit" button at the bottom of the form without entering text in the "Site Name:" field.
+3. Verify User is prompted to fill out the "Site Name:" field.
+4. Enter "Test Campsite" in the site name field.
+5. Select the submit button at the bottom of the form.
+6. Verify the user is prompted to fill out the "City:" field.
+7. Enter "test city" for the city.
+8. Select the submit button at the bottom of the form.
+9. verify the user is prompted to fill out the "Type of campsite:" field.
+10. Enter "test type" for type of campsite.
+11. Select the submit button at the bottom of the form.
+12. Verify the user is prompted to fill out the following fields: "GPS Coordinates", "Date of Visit", "Restrooms", and "Fees".
+13. Enter test for GPS coordinates.
+14. Verify the user is prompted to enter GPS coordinates in the following format "dd.dddd, dd.dddd"
+15. Enter 11.1111, 22.2222 for the GPS coordinates
+16. Select Sumbit
+17. Verify the user is prompted to enter date of visit in the following format mm/dd/yy.
+18. Enter "test" for the date.
+19. Verify the user is prompted to enter date of visit in the following format mm/dd/yy.
+20. Enter "09/20/21 for the year.
+21. Select Submit
+22. Verify user is prompted that the Fees and Restrooms fields are required.
+23. Select "Yes" for both fees and restrooms.
+24. Select "Submit"\
+25. Verify form successfully submitted.
+
+**Expected Results** \
+Form does not submit unless the following is true:
+1. user input values for the following fields: Site Name, City, GPS Coordinates, Date of Visit, Type of Campsite, Restrooms, and Fees.
+2. GPS coordinates are formated dd.dddd, dd.dddd where d is a numeric values
+3. Date of visit is formated dd/dd/dd
+4. Either yes or no radio button for Restrooms and Fees is selected
+5. User is prompted to correct error 
+   
+**Actual Results** \
+1. Form did not submit when input was not provided for fields: Site Name, City, State, GPS Coordinates, Date of Visit, Type of Campsite, Restrooms, and Fees.
+2. User was prompted to that field was required for Site Name, City, Type of Campsite, Restrooms, and Fees when data was not provided. 
+3. User was prompted when input into fields  GPS Coordinates and Date of Visit was not formated correctly. 
+4. Form submitted when all required fields had correctly formated user entries. 
+    
+**Status (Pass/Fail)** \
+    Pass \
+**Notes** \
+    Form submission does not currently send data to database. Submission loads temporary page. 
+**Post-Conditions** \
+    N/A \
