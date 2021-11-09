@@ -35,8 +35,8 @@
      \
      \
      \
-## Use Case2: Validate starting DB has correct Campsite names for entries** \
-    Verify that the starting DB has the correct Campsite names at the expected campID \
+## Use Case2: Validate starting DB has correct Campsite names for entries** 
+Verify that the starting DB has the correct Campsite names at the expected campID \
 **Description** \
     Test the starting DB entries to ensure it was set up correctly \
 **Pre-Conditions** \
