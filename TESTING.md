@@ -334,7 +334,7 @@ Navigation bar from the Edit Profile Page:
 10. Select the "Register" link on the header. Verify link loads the new user registration page "/register".
 
 **Expected Results** \
-Each of the following link on the header navagetes to the coresponding page while user is on any of the pages in the web application:
+Each of the following links on the header navagetes to the coresponding page while user is on any of the pages in the web application (Home, :
 1. Campr navigates to "/login"
 2. Hopme navigates to "/home"
 3. About navigates to "/about"
@@ -342,10 +342,20 @@ Each of the following link on the header navagetes to the coresponding page whil
 5. Register navigates to "/register"
     
 **Actual Results** \
-    
+On Each of the following pages of the web application the links of the header linked to the correspoinding page listed in expected result above:
+1. Login page (All 5 header elements linked to correct page)
+2. Home page (All 5 header elements linked to correct page)
+3. About page (All 5 header elements linked to correct page)
+4. User Registration Page (All 5 header elements linked to correct page)
+5. Search Nearby Page (All 5 header elements linked to correct page)
+6. Search Results Page (All 5 header elements linked to correct page)
+7. Create New Campsite Page (All 5 header elements linked to correct page)
+8. Profile Page (All 5 header elements linked to correct page)
+9. Edit Profile Page (All 5 header elements linked to correct page)
+
 **Status (Pass/Fail)** \
-    Pass \
+    Pass 
 **Notes** \
-    N/A \
+    N/A 
 **Post-Conditions** \
-    N/A \
+    N/A 
