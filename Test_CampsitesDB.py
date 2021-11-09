@@ -111,6 +111,10 @@ class TestCase(unittest.TestCase):
 
 
 
+
+
 # Main: Run Test Cases
 if __name__ == '__main__':
     unittest.main()
+    os.remove("CampsiteDB")
+
