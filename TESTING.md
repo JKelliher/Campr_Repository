@@ -204,3 +204,51 @@ Verify that the starting DB has the correct content for known entries \
     N/A \
 **Post-Conditions** \
     user may need to remove the LoginDB before performing subsequent tests.
+    
+    
+# User Acceptance Testing
+To run the automated test cases ensure the following are installed: \
+Python3 \
+Sqlite3 \
+Flask \
+Flask-WTForms \
+After Clonging the repository open the command terminal. \
+From the command line Navigate to the Campr_Repository directory. \
+Navigate to Campr_Flask_Codebase directory.\
+Run campr_app.py using python 3. \
+open the URL for the web application. It should be displayed with text similar to "Running on http://127.0.1:5000/ (Press CTRL+C to quit) on the fourth output line in the termiinal \
+\
+See below for each user test case:
+
+## Use Case 1: Validate starting DB has correct City/State pairs for entries
+Verify that the starting DB has the correct City/State pairs for known entries \
+**Description** \
+    Test the starting DB entries to ensure it was set up correctly \
+**Pre-Conditions** \
+    CampTableDB does not exist otherwise user will get an error that it already exits and test will not run. \
+**Test Steps** \
+    Navigate to the Campr_Repository \
+    run 'python Test_CampsitesDB.py' \
+**Expected Results** \
+    you should see the following text and pass one of the tests \
+    >".Checking the database to see if cities are associated with the intended state \
+    >checking that Allenspark is in Colorado... \
+    >checking that Allenspark is in Colorado... \
+    >checking that Moab is in UT... \
+    >checking that Moab is in UT... \
+    >Checking that Alpine is associated with WY... \
+    >Test_CitySate Passed!" \
+**Actual Results** \
+    >".Checking the database to see if cities are associated with the intended state \
+    >checking that Allenspark is in Colorado... \
+    >checking that Allenspark is in Colorado... \
+    >checking that Moab is in UT... \
+    >checking that Moab is in UT... \
+    >Checking that Alpine is associated with WY... \
+    >Test_CitySate Passed!" \
+**Status (Pass/Fail)** \
+    Pass \
+**Notes** \
+    N/A \
+**Post-Conditions** \
+    user may need to remove the CampTableDB before performing subsequent tests. 
