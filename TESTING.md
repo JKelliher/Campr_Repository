@@ -334,12 +334,12 @@ Navigation bar from the Edit Profile Page:
 10. Select the "Register" link on the header. Verify link loads the new user registration page "/register".
 
 **Expected Results** \
-    Each of the following link on the header navagetes to the coresponding page while user is on any of the pages in the web application:
-    1. Campr navigates to "/login"
-    2. Hopme navigates to "/home"
-    3. About navigates to "/about"
-    4. Login navigates to "/login"
-    5. Register navigates to "/register"
+Each of the following link on the header navagetes to the coresponding page while user is on any of the pages in the web application:
+1. Campr navigates to "/login"
+2. Hopme navigates to "/home"
+3. About navigates to "/about"
+4. Login navigates to "/login"
+5. Register navigates to "/register"
     
 **Actual Results** \
     
