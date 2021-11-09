@@ -17,7 +17,7 @@ SQLAlchemy
 To run the automated test cases ensure python 3 and sqlite3 are installed. Navigate to the Campr_Repository. \
 Ensure file CampTableDB.db does not exist in the folder. \
 Run Test_cCampsitesDB.py using python3 to execute the automated tests. \
-The purpose and output of each test are detailed below: \
+The purpose and output of each test are detailed below:
 
 ## Use Case 1: Validate starting DB has correct City/State pairs for entries
 Verify that the starting DB has the correct City/State pairs for known entries \
