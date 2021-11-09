@@ -240,7 +240,7 @@ Navigation bar from the login page:
 8. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register". 
   
 Navigation bar from the home page:
-1. Navigate to the home page. Add "/home" to the base url to get there if home link on header does not work. 
+1. Navigate to the home page. Add "/home" to the base url to get there if "Home" link on header does not work. 
 2. Select the CAMPr link on the header. Verify link loads the login page "/login"
 3. Navigate back to "/home"
 4. Select the "Home" link on the header. Verify link reloads home page "/home". 
@@ -251,44 +251,98 @@ Navigation bar from the home page:
 9. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register".
 
 Navigation bar from the about page:
-1. Navigate to the about page. Add "/about" to the base url to get there if home link on header does not work. 
+1. Navigate to the about page. Add "/about" to the base url to get there if "About" link on header does not work. 
 2. Select the CAMPr link on the header. Verify link loads the login page "/login"
 3. Navigate back to "/about"
 4. Select the "Home" link on the header. Verify link loads home page "/home". 
 5. Navigate back to "/about"
 6. Select the "About" link on the header. Verify link reloads the about page "/about". 
-8. Select the "Login" link on the header. Verify link loads the login page "/login".
-9. Navigate back to "/about". 
-10. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register".
+7. Select the "Login" link on the header. Verify link loads the login page "/login".
+8. Navigate back to "/about". 
+9. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register".
    
-Navigation bar from the about Register Page:
-1. Navigate to the about page. Add "/about" to the base url to get there if home link on header does not work. 
+Navigation bar from the about User Register Page:
+1. Navigate to the user registration page. Add "/register" to the base url to get there if "Register" link on header does not work. 
 2. Select the CAMPr link on the header. Verify link loads the login page "/login"
-3. Navigate back to "/about"
+3. Navigate back to "/register"
 4. Select the "Home" link on the header. Verify link loads home page "/home". 
-5. Navigate back to "/about"
-6. Select the "About" link on the header. Verify link reloads the about page "/about". 
+5. Navigate back to "/register"
+6. Select the "About" link on the header. Verify link loads the about page "/about".
+7. Navigate back to "/register" 
 8. Select the "Login" link on the header. Verify link loads the login page "/login".
-9. Navigate back to "/about". 
-10. Select the "Register" link on the header. Verify link takes you to the new user registration page "/register".
+9. Navigate back to "/register" 
+10. Select the "Register" link on the header. Verify link reloads the new user registration page "/register".
  
+Navigation bar from the Search Nearby Page:
+1. Navigate to the Search Nearby Page. Add "/search" to the base url to get there. 
+2. Select the CAMPr link on the header. Verify link loads the login page "/login"
+3. Navigate back to "/search"
+4. Select the "Home" link on the header. Verify link loads home page "/home". 
+5. Navigate back to "/search"
+6. Select the "About" link on the header. Verify link loads the about page "/about".
+7. Navigate back to "/search"
+8. Select the "Login" link on the header. Verify link loads the login page "/login".
+9. Navigate back to "/search" 
+10. Select the "Register" link on the header. Verify link loads the new user registration page "/register".
+
+Navigation bar from the Search Result Page:
+1. Navigate to the Search Result page. Add "/search_result" to the base url to get there. 
+2. Select the CAMPr link on the header. Verify link loads the login page "/login"
+3. Navigate back to "/search_result"
+4. Select the "Home" link on the header. Verify link loads home page "/home". 
+5. Navigate back to "/search_result"
+6. Select the "About" link on the header. Verify link loads the about page "/about".
+7. Navigate back to "/search_result" 
+8. Select the "Login" link on the header. Verify link loads the login page "/login".
+9. Navigate back to "/search_result" 
+10. Select the "Register" link on the header. Verify link loads the new user registration page "/register".
+
+Navigation bar from the Create New Campsite Page:
+1. Navigate to the Create New Campsite. Add "/new_campsite" to the base url to get there. 
+2. Select the CAMPr link on the header. Verify link loads the login page "/login"
+3. Navigate back to "/new_campsite"
+4. Select the "Home" link on the header. Verify link loads home page "/home". 
+5. Navigate back to "/new_campsite"
+6. Select the "About" link on the header. Verify link loads the about page "/about".
+7. Navigate back to "/new_campsite"
+8. Select the "Login" link on the header. Verify link loads the login page "/login".
+9. Navigate back to "/new_campsite" 
+10. Select the "Register" link on the header. Verify link loads the new user registration page "/register".
+
+Navigation bar from the Profile Page:
+1. Navigate to the profile page. Add "/profile" to the base url to get there. 
+2. Select the CAMPr link on the header. Verify link loads the login page "/login"
+3. Navigate back to "/profile"
+4. Select the "Home" link on the header. Verify link loads home page "/home". 
+5. Navigate back to "/profile"
+6. Select the "About" link on the header. Verify link loads the about page "/about".
+7. Navigate back to "/profile"
+8. Select the "Login" link on the header. Verify link loads the login page "/login".
+9. Navigate back to "/profile" 
+10. Select the "Register" link on the header. Verify link loads the new user registration page "/register".
+
+Navigation bar from the Edit Profile Page:
+1. Navigate to the profile page. Add "/edit_profile" to the base url to get there. 
+2. Select the CAMPr link on the header. Verify link loads the login page "/login"
+3. Navigate back to "/edit_profileprofile"
+4. Select the "Home" link on the header. Verify link loads home page "/home". 
+5. Navigate back to "/edit_profileprofile"
+6. Select the "About" link on the header. Verify link loads the about page "/about".
+7. Navigate back to "/edit_profileprofile"
+8. Select the "Login" link on the header. Verify link loads the login page "/login".
+9. Navigate back to "/edit_profileprofile" 
+10. Select the "Register" link on the header. Verify link loads the new user registration page "/register".
+
 **Expected Results** \
-    you should see the following text and pass one of the tests \
-    >".Checking the database to see if cities are associated with the intended state \
-    >checking that Allenspark is in Colorado... \
-    >checking that Allenspark is in Colorado... \
-    >checking that Moab is in UT... \
-    >checking that Moab is in UT... \
-    >Checking that Alpine is associated with WY... \
-    >Test_CitySate Passed!" \
+    Each of the following link on the header navagetes to the coresponding page while user is on any of the pages in the web application:
+    1. Campr navigates to "/login"
+    2. Hopme navigates to "/home"
+    3. About navigates to "/about"
+    4. Login navigates to "/login"
+    5. Register navigates to "/register"
+    
 **Actual Results** \
-    >".Checking the database to see if cities are associated with the intended state \
-    >checking that Allenspark is in Colorado... \
-    >checking that Allenspark is in Colorado... \
-    >checking that Moab is in UT... \
-    >checking that Moab is in UT... \
-    >Checking that Alpine is associated with WY... \
-    >Test_CitySate Passed!" \
+    
 **Status (Pass/Fail)** \
     Pass \
 **Notes** \
