@@ -64,7 +64,7 @@ Verify that the starting DB has the correct Campsite names at the expected campI
     
     
 ## Use Case3: Validate addCampsite works as expected
-    Verify that the the addCampsite function works as expected \
+Verify that the the addCampsite function works as expected \
 **Description** \
     Test the addCampsite function to ensure it adds a new campsite into the database correctly. This will verify that the ValueErrors present in the function check to ensure user input correct format \
 **Pre-Conditions** \
@@ -119,7 +119,7 @@ Verify that the starting DB has the correct Campsite names at the expected campI
     
     
 ## Use Case4: Validate addUser works as expected
-    Verify that the the addUser function works as expected to the LoginDB \
+Verify that the the addUser function works as expected to the LoginDB \
 **Description** \
     Test the addUser function to ensure it adds a new user into the database correctly. This will verify that the ValueErrors present in the function check to ensure user input correct format \
 **Pre-Conditions** \
@@ -161,7 +161,7 @@ Verify that the starting DB has the correct Campsite names at the expected campI
     
     
 ## Use Case5: Validate starting DB has correct information in it for login credentials
-    Verify that the starting DB has the correct content for known entries \
+Verify that the starting DB has the correct content for known entries \
 **Description** \
     Test the starting DB entries to ensure it was set up correctly \
 **Pre-Conditions** \
