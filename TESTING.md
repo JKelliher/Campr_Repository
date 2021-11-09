@@ -212,11 +212,13 @@ Python3 \
 Sqlite3 \
 Flask \
 Flask-WTForms \
+Perform the following to open the web application:
 1. After Clonging the repository open the command terminal. \
 2. From the command line Navigate to the Campr_Repository directory. \
 3. Navigate to Campr_Flask_Codebase directory.\
 4. Run campr_app.py using python 3. \
 5. open the URL for the web application. It should be displayed with text similar to "Running on http://127.0.1:5000/ (Press CTRL+C to quit)"
+\
 \
 See below for each user test case:
 
