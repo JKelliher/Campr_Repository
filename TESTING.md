@@ -30,11 +30,8 @@ Verify that the starting DB has the correct City/State pairs for known entries \
 **Notes** \
     N/A \
 **Post-Conditions** \
-    user may need to remove the CampTableDB before performing subsequent tests. \
-     \
-     \
-     \
-     \
+    user may need to remove the CampTableDB before performing subsequent tests. 
+
 ## Use Case2: Validate starting DB has correct Campsite names for entries** 
 Verify that the starting DB has the correct Campsite names at the expected campID \
 **Description** \
@@ -63,6 +60,7 @@ Verify that the starting DB has the correct Campsite names at the expected campI
     N/A \
 **Post-Conditions** \
     user may need to remove the CampTableDB before performing subsequent tests. \
+    
     
     
 ## Use Case3: Validate addCampsite works as expected** \
