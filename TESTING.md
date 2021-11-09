@@ -1,5 +1,5 @@
 # Automated Test Cases 
-**Use Case1: Validate starting DB has correct City/State pairs for entries** \
+## Use Case1: Validate starting DB has correct City/State pairs for entries** \
     Verify that the starting DB has the correct City/State pairs for known entries \
 **Description** \
     Test the starting DB entries to ensure it was set up correctly \
@@ -35,7 +35,7 @@
      \
      \
      \
-**Use Case2: Validate starting DB has correct Campsite names for entries** \
+## Use Case2: Validate starting DB has correct Campsite names for entries** \
     Verify that the starting DB has the correct Campsite names at the expected campID \
 **Description** \
     Test the starting DB entries to ensure it was set up correctly \
@@ -65,7 +65,7 @@
     user may need to remove the CampTableDB before performing subsequent tests. \
     
     
-**Use Case3: Validate addCampsite works as expected** \
+## Use Case3: Validate addCampsite works as expected** \
     Verify that the the addCampsite function works as expected \
 **Description** \
     Test the addCampsite function to ensure it adds a new campsite into the database correctly. This will verify that the ValueErrors present in the function check to ensure user input correct format \
@@ -120,7 +120,7 @@
     
     
     
-**Use Case4: Validate addUser works as expected** \
+## Use Case4: Validate addUser works as expected** \
     Verify that the the addUser function works as expected to the LoginDB \
 **Description** \
     Test the addUser function to ensure it adds a new user into the database correctly. This will verify that the ValueErrors present in the function check to ensure user input correct format \
@@ -162,7 +162,7 @@
     user may need to remove the LoginDB before performing subsequent tests. \
     
     
-**Use Case5: Validate starting DB has correct information in it for login credentials** \
+## Use Case5: Validate starting DB has correct information in it for login credentials** \
     Verify that the starting DB has the correct content for known entries \
 **Description** \
     Test the starting DB entries to ensure it was set up correctly \
