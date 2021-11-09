@@ -488,7 +488,7 @@ Verify that the user entry form on the Create New Campsite page properly validat
     This test will very that the user entry form on the Create New Campsite properly validates user input. The form was build with input validators that match the database contraints. \
 **Pre-Conditions** \
     Campr web application has been opened in local browser. See steps 1 thru 5 listed user the "User Acceptance Testing" header for details on opening the web application in you local browser. \
-**Test Steps** \
+**Test Steps** 
 1. Navigate to the Create New Campsite page. Add "/new_campsite" to the base url or user page links to get the new campsite page.
 2. Select the "submit" button at the bottom of the form without entering text in the "Site Name:" field.
 3. Verify User is prompted to fill out the "Site Name:" field.
@@ -523,7 +523,7 @@ Form does not submit unless the following is true:
 4. Either yes or no radio button for Restrooms and Fees is selected
 5. User is prompted to correct error 
    
-**Actual Results** \
+**Actual Results** 
 1. Form did not submit when input was not provided for fields: Site Name, City, State, GPS Coordinates, Date of Visit, Type of Campsite, Restrooms, and Fees.
 2. User was prompted to that field was required for Site Name, City, Type of Campsite, Restrooms, and Fees when data was not provided. 
 3. User was prompted when input into fields  GPS Coordinates and Date of Visit was not formated correctly. 
