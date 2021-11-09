@@ -336,7 +336,7 @@ Navigation bar from the Edit Profile Page:
 **Expected Results** \
 Each of the following links on the header navagetes to the coresponding page while user is on any of the pages in the web application (Home, :
 1. Campr navigates to "/login"
-2. Hopme navigates to "/home"
+2. Home navigates to "/home"
 3. About navigates to "/about"
 4. Login navigates to "/login"
 5. Register navigates to "/register"
@@ -359,3 +359,126 @@ On Each of the following pages of the web application the links of the header li
     N/A 
 **Post-Conditions** \
     N/A 
+    
+    
+ ## Use Case 2: Verify web app footer navigation funcitons as expected.
+Verify that built in footer links to the correct page will user is on each page. \
+**Description** \
+    This test will verify the footer for the web application navigates to the correct pages\
+**Pre-Conditions** \
+    Campr web application has been opened in local browser. See steps 1 thru 5 listed user the "User Acceptance Testing" header for details on opening the web application in you local browser. \
+**Test Steps:** \
+Footer Navigation from the login page:
+1. Navigate to the login page. Application will be at the login by default upon opening. 
+2. Select the "Login" link on the footer. Verify link reloads the login page. 
+3. Select the "About" link on the footer. Verify link takes you to the about page of the web application "/about".
+4. Navigate back to /login. 
+5. Select the "New Campsite" link on the footer. Verify link loads the Create New Campsite page "/new_campsite". 
+6. Navigate back to /login. 
+7. Select the "search" link on the footer. Verify link loads the search page "/search"
+  
+Footer Navigation from the home page:
+1. Navigate to the home page. Add "/home" to the base url to get there if "Home" link on header does not work. 
+2. Select the "Login" link on the footer. Verify link loads the login page "/login. 
+3. Navigate back to /home.
+4. Select the "About" link on the footer. Verify link loads the about page of the web application "/about".
+5. Navigate back to /home. 
+6. Select the "New Campsite" link on the footer. Verify link loads the Create New Campsite page "/new_campsite". 
+7. Navigate back to /home. 
+8. Select the "search" link on the footer. Verify link loads the search page "/search"
+
+Footer Navigation from the about page:
+1. Navigate to the about page. Add "/about" to the base url to get there if "About" link on header does not work. 
+2. Select the "Login" link on the footer. Verify link reloads the login page. 
+3. Navigate back to /about.
+4. Select the "About" link on the footer. Verify link reloads about page of the web application "/about".
+5. Navigate back to /about. 
+6. Select the "New Campsite" link on the footer. Verify link loads the Create New Campsite page "/new_campsite". 
+7. Navigate back to /about. 
+8. Select the "search" link on the footer. Verify link loads the search page "/search"
+   
+Footer Navigation bar from the User Register Page:
+1. Navigate to the user registration page. Add "/register" to the base url to get there if "Register" link on header does not work. 
+2. Select the "Login" link on the footer. Verify link loads the login page "/login. 
+3. Navigate back to /register.
+4. Select the "About" link on the footer. Verify link loads the about page of the web application "/about".
+5. Navigate back to /register. 
+6. Select the "New Campsite" link on the footer. Verify link loads the Create New Campsite page "/new_campsite". 
+7. Navigate back to /register. 
+8. Select the "search" link on the footer. Verify link loads the search page "/search"
+ 
+Footer Navigation bar from the Search Nearby Page:
+1. Navigate to the Search Nearby Page. Add "/search" to the base url to get there. 
+2. Select the "Login" link on the footer. Verify link loads the login page "/login. 
+3. Navigate back to /search.
+4. Select the "About" link on the footer. Verify link loads the about page of the web application "/about".
+5. Navigate back to /search. 
+6. Select the "New Campsite" link on the footer. Verify link loads the Create New Campsite page "/new_campsite". 
+7. Navigate back to /search. 
+8. Select the "search" link on the footer. Verify link reloads the search page "/search".
+
+Footer Navigation bar from the Search Result Page:
+1. Navigate to the Search Result page. Add "/search_result" to the base url to get there. 
+2. Select the "Login" link on the footer. Verify link loads the login page "/login. 
+3. Navigate back to /search_result.
+4. Select the "About" link on the footer. Verify link loads the about page of the web application "/about".
+5. Navigate back to /search_result. 
+6. Select the "New Campsite" link on the footer. Verify link loads the Create New Campsite page "/new_campsite". 
+7. Navigate back to /search_result. 
+8. Select the "search" link on the footer. Verify link loads the search page "/search".
+
+Footer Navigation bar from the Create New Campsite Page:
+1. Navigate to the Create New Campsite. Add "/new_campsite" to the base url to get there. 
+2. Select the "Login" link on the footer. Verify link loads the login page "/login. 
+3. Navigate back to "/new_campsite".
+4. Select the "About" link on the footer. Verify link loads the about page of the web application "/about".
+5. Navigate back to "/new_campsite". 
+6. Select the "New Campsite" link on the footer. Verify link reloads the Create New Campsite page "/new_campsite". 
+7. Select the "search" link on the footer. Verify link loads the search page "/search".
+
+Footer Navigation bar from the Profile Page:
+1. Navigate to the profile page. Add "/profile" to the base url to get there. 
+2. Select the "Login" link on the footer. Verify link loads the login page "/login. 
+3. Navigate back to /profile.
+4. Select the "About" link on the footer. Verify link loads the about page of the web application "/about".
+5. Navigate back to /profile. 
+6. Select the "New Campsite" link on the footer. Verify link loads the Create New Campsite page "/new_campsite". 
+7. Navigate back to /profile. 
+8. Select the "search" link on the footer. Verify link loads the search page "/search".
+
+Navigation bar from the Edit Profile Page:
+1. Navigate to the profile page. Add "/edit_profile" to the base url to get there. 
+2. Select the "Login" link on the footer. Verify link loads the login page "/login. 
+3. Navigate back to /edit_profile.
+4. Select the "About" link on the footer. Verify link loads the about page of the web application "/about".
+5. Navigate back to /edit_profile. 
+6. Select the "New Campsite" link on the footer. Verify link loads the Create New Campsite page "/new_campsite". 
+7. Navigate back to /edit_profile. 
+8. Select the "search" link on the footer. Verify link loads the search page "/search".
+
+**Expected Results** \
+Each of the following links on the header navagetes to the coresponding page while user is on any of the pages in the web application (Home, :
+1. Login navigates to "/login"
+2. About navigates to "/about"
+3. New Campsite navigates to "/new_campsite"
+4. Search navigates to "/Search"
+    
+**Actual Results** \
+On Each of the following pages of the web application the links of the header linked to the correspoinding page listed in expected result above:
+1. Login page (All 4 footer elements linked to correct page)
+2. Home page (All 4 footer elements linked to correct page)
+3. About page (All 4 footer elements linked to correct page)
+4. User Registration Page (All 4 footer elements linked to correct page)
+5. Search Nearby Page (All 4 footer elements linked to correct page)
+6. Search Results Page (All 4 footer elements linked to correct page)
+7. Create New Campsite Page (All 4 footer elements linked to correct page)
+8. Profile Page (All 4 footer elements linked to correct page)
+9. Edit Profile Page (All 4 footer elements linked to correct page)
+
+**Status (Pass/Fail)** \
+    Pass 
+**Notes** \
+    N/A 
+**Post-Conditions** \
+    N/A 
+
