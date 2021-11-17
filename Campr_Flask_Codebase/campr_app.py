@@ -1,5 +1,6 @@
 from flask import Flask, url_for, render_template
 from forms import camp_site_entry_form
+from forms import new_user_form
 
 #from flask_sqlalchemy import SQLAlchemy
 
@@ -28,22 +29,34 @@ camp_sites = [
     }
 ]
 
+
+
 @app.route('/')
 @app.route('/login/')
 def login():
     return render_template('login.html')
 
+
 @app.route('/register/')
 def register():
     return render_template('new_user.html')
+
 
 @app.route('/home/')
 def home():
     return render_template('home.html', title='Home Page', camp_sites=camp_sites)
 
-@app.route('/new_user/')
+
+@app.route('/new_user/', methods=['GET', 'POST'])
 def new_user():
-    return render_template('new_user.html')
+    form = new_user_form()
+    if form.validate_on_submit():
+        return """
+        <h1> Welcome to Campr. </h1>
+        <a href="/new_campsite">Click Here to Submit Your First Site!</a>
+        """
+    return render_template('new_user.html', form=form)
+
 
 @app.route('/new_campsite/', methods=['GET', 'POST'])
 def new_campsite():
@@ -55,29 +68,37 @@ def new_campsite():
         """
     return render_template('new_campsite.html', form=form)
 
+
 @app.route('/search/')
 def search():
     return render_template('search.html')
+
 
 @app.route('/search_result/')
 def search_result():
     return render_template('search_result.html', camp_sites=camp_sites)
 
+
 @app.route('/profile/')
 def profile():
     return render_template('profile.html')
+
 
 @app.route('/edit_profile/')
 def edit_profile():
     return render_template('edit_profile.html')
 
+
 @app.route('/retrieve_login/')
 def retrieve_login():
     return render_template('retrieve_login.html')
 
+
 @app.route('/about/')
 def about():
     return render_template('about.html')
+    
+    
     
     
 if __name__ == '__main__':

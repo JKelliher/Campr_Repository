@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from werkzeug.utils import secure_filename
-from wtforms import StringField, SubmitField, SelectField, TextAreaField, RadioField
+from wtforms import StringField, SubmitField, SelectField, TextAreaField, RadioField, BooleanField
 from wtforms.validators import DataRequired, InputRequired, Length, Regexp
 
 class camp_site_entry_form(FlaskForm):
@@ -48,18 +48,14 @@ class camp_site_entry_form(FlaskForm):
 
 
 
-# class new_user_form(FlaskForm):
-# 	email = StringField('Email: ',
-# 		validators =[InputRequired(), Length(min = 6, max = 35)],
-# 		render_kw={"placeholder":"Email"})
+class new_user_form(FlaskForm): #wtforms to handle the new user
+	email = StringField('Email: ',
+		validators =[InputRequired(), Length(min = 6, max = 35)],
+		render_kw={"placeholder":"Email"})
 
-# 	password = StringField('Password: ',
-# 		validators=[InputRequired(), Length(min = 6, max = 25)],
-# 		render_kw={"placeholder":"Password"})
+	password = StringField('Password: ',
+		validators=[InputRequired(), Length(min = 6, max = 25)],
+		render_kw={"placeholder":"Password"})
 
-# 	accept_rules = BooleanField('I accept the leave no trace principles',
-# 		validators = [InputRequired()]
-
-
-
-	
+	accept_rules = BooleanField('I accept the leave no trace principles',
+		validators = [InputRequired()])
