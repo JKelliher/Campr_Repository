@@ -88,6 +88,7 @@ def addCampsite(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroo
 
     #need a check to see if date in correct format mm/dd/yy
     if not bool(re.match("^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.]\d\d$", Date)):
+        #regex from https://www.regular-expressions.info/dates.html
         print("date not in the correct format. Please provide date in mm/dd/yy format.")
         raise ValueError
     
@@ -131,6 +132,7 @@ def nearby(dbname, gps):
 
     #Check for GPS to be in correct format...
     if not bool(re.match("((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))", GPS)):
+        #regex from: https://www.regexlib.com/Search.aspx?k=latitude
         print("GPS not in correct format. Please use decimal degrees format e.g. dd.dddddd, dd.ddddd")
         raise ValueError
 
