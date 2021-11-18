@@ -68,18 +68,6 @@
         </div>
       </div>
 
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          {{ form.type_of_campsite.label(class="form-control-label") }}
-          {{ form.type_of_campsite(class_="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.type_of_campsite.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-      </div>
-
       <div class="form-group">
         {{ form.restrooms.label(class="form-check-label") }}
           
@@ -96,6 +84,18 @@
              <l1 style="color:red"> {{ error }}</l1>
             {% endfor %}
           </ul> 
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          {{ form.type_of_campsite.label(class="form-control-label") }}
+          {{ form.type_of_campsite(class_="form-control form-control-lg") }}
+          <ul> 
+            {% for error in form.type_of_campsite.errors %}
+             <l1 style="color:red"> {{ error }}</l1>
+            {% endfor %}
+          </ul> 
+        </div>
       </div>
 
       <div class="form-group">

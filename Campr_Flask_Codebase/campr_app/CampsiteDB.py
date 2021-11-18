@@ -8,7 +8,7 @@ import re
 def create(dbname):
         conn = sqlite3.connect(dbname)
         c = conn.cursor()
-        c.execute("CREATE TABLE CampSites(idCamp INT, Site_Name VARCHAR, GPS VARCHAR, City VARCHAR, State VARCHAR, Date VARCHAR, Rating INT, Type VARCHAR, Restrooms VARCHAR, Fees VARCHAR, Notes VARCHAR, Image VARCHAR);")
+        c.execute("CREATE TABLE CampSites(idCamp INTEGER PRIMARY KEY AUTOINCREMENT, Site_Name VARCHAR, GPS VARCHAR, City VARCHAR, State VARCHAR, Date VARCHAR, Rating INT, Type VARCHAR, Restrooms VARCHAR, Fees VARCHAR, Notes VARCHAR, Image VARCHAR);")
         conn.commit()
         conn.close()
 
@@ -200,8 +200,8 @@ def bestsites(dbname):
 
 #hard coded for testing
 def main():   
-    create("CampTableDB")
-    fill("CampTableDB")
+    create("CampTableDB.db")
+    fill("CampTableDB.db")
     #nearby("CampTableDB", '43.21591, -111.06096')
     #addCampsite("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "05/20/19", 5, "Campground", "Y", "N", "somenotes", "https://github.com/JKelliher/Campr_Repository/blob/main/Campr_Images/Campr%20Images/IMG_1655.JPG")
     #deletesite("CampTableDB", 12)
