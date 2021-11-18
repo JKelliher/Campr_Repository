@@ -2,6 +2,7 @@ from flask import Flask, url_for, render_template, redirect
 from campr_app import app, db
 from campr_app.forms import camp_site_entry_form
 from campr_app.models import CampSites
+from forms import new_user_form
 
 
 @app.route('/')
@@ -14,9 +15,15 @@ def home():
     camp_sites = CampSites.query.all()
     return render_template('home.html', title='Home Page', camp_sites=camp_sites)
 
-@app.route('/new_user/')
+@app.route('/new_user/', methods=['GET', 'POST'])
 def new_user():
-    return render_template('new_user.html')
+    form = new_user_form()
+    if form.validate_on_submit():
+        return """
+        <h1> Welcome to Campr. </h1>
+        <a href="/new_campsite">Click Here to Submit Your First Site!</a>
+        """
+    return render_template('new_user.html', form=form)
 
 @app.route('/new_campsite/', methods=['GET', 'POST'])
 def new_campsite():
