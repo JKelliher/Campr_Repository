@@ -1,8 +1,7 @@
 from flask import Flask, url_for, render_template, redirect
 from campr_app import app, db
-from campr_app.forms import camp_site_entry_form
+from campr_app.forms import camp_site_entry_form, new_user_form
 from campr_app.models import CampSites
-from forms import new_user_form
 
 
 @app.route('/')
