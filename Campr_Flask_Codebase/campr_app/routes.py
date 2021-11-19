@@ -2,6 +2,8 @@ from flask import Flask, url_for, render_template, redirect
 from campr_app import app, db
 from campr_app.forms import camp_site_entry_form, new_user_form, search_form
 from campr_app.models import CampSites
+import campr_app.CampsiteDB
+
 
 
 @app.route('/')
@@ -52,13 +54,17 @@ def search():
 @app.route('/search_result/')
 def search_result():
     return render_template('search_result.html')
+
+
 @app.route('/profile/')
 def profile():
     return render_template('profile.html')
 
+
 @app.route('/edit_profile/')
 def edit_profile():
     return render_template('edit_profile.html')
+
 
 @app.route('/retrieve_login/')
 def retrieve_login():
