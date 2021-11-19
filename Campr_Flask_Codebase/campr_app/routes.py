@@ -14,6 +14,7 @@ def home():
     camp_sites = CampSites.query.all()
     return render_template('home.html', title='Home Page', camp_sites=camp_sites)
 
+
 @app.route('/new_user/', methods=['GET', 'POST'])
 def new_user():
     form = new_user_form()
@@ -23,6 +24,8 @@ def new_user():
         <a href="/new_campsite">Click Here to Submit Your First Site!</a>
         """
     return render_template('new_user.html', form=form)
+
+
 
 @app.route('/new_campsite/', methods=['GET', 'POST'])
 def new_campsite():
@@ -41,8 +44,7 @@ def new_campsite():
 def search():
     form = search_form()
     if form.validate_on_submit():
-        print('Here are the campsites near your coordinates!')
-        print('connect search function and results page here')
+        return '<h2> Successful campsite search with coordinates: {}.</h2>'.format(form.given_gps_coordinates.data)
     return render_template('search.html', form=form)
 
 
