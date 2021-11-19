@@ -41,7 +41,7 @@ def search():
     if form.validate_on_submit():
         print('Here are the campsites near your coordinates!')
         print('connect search function and results page here')
-    return render_template('search.html')
+    return render_template('search.html', form=form)
 
 @app.route('/search_result/')
 def search_result():

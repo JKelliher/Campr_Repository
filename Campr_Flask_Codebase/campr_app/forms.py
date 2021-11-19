@@ -62,6 +62,6 @@ class new_user_form(FlaskForm): #wtforms to handle the new user
  
  
 class search_form(FlaskForm):
-    gps_coordinates = StringField('GPS Coordinates:', 
+    given_gps_coordinates = StringField('GPS Coordinates:', 
 		validators =[Regexp('((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))', message="Please enter GPS Coordinates in format: dd,dddd, dd,dddd")],
 		render_kw={"placeholder":"Enter GPS Coordinates format: dd,dddd, dd,dddd"})
