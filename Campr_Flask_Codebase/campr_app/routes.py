@@ -35,6 +35,8 @@ def new_campsite():
         return redirect(url_for('home'))
     return render_template('new_campsite.html', form=form)
 
+
+
 @app.route('/search/', methods=['GET', 'POST'])
 def search():
     form = search_form()
@@ -43,10 +45,11 @@ def search():
         print('connect search function and results page here')
     return render_template('search.html', form=form)
 
+
+
 @app.route('/search_result/')
 def search_result():
     return render_template('search_result.html')
-
 @app.route('/profile/')
 def profile():
     return render_template('profile.html')
