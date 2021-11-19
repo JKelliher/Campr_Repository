@@ -126,6 +126,8 @@ def addCampsite(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroo
     conn.close()
 
 
+
+
 def nearby(dbname, gps):
     conn = sqlite3.connect(dbname)
     c = conn.cursor()
@@ -160,6 +162,8 @@ def nearby(dbname, gps):
     conn.commit()
     conn.close()
     return compsite
+
+
 
 def deletesite(dbname, delID):
 
