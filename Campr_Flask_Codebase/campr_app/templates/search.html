@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="container">
-  <h2 id="new_site_header">Create a New Site:</h2>
+  <h2 id="new_site_header">Search Sites Near Provided Coordinates:</h2>
   <form method="POST" action="">
     
     <!-- adding CRF token -->
@@ -13,18 +13,16 @@
 
       <div class="form-row">
         <div class="form-group col-md-6">
-          {{ form.gps_coordinates.label(class="form-control-label") }}
-          {{ form.gps_coordinates(class="form-control form-control-lg") }}
+          {{ form.given_gps_coordinates.label(class="form-control-label") }}
+          {{ form.given_gps_coordinates(class="form-control form-control-lg") }}
           <ul> 
-            {% for error in form.gps_coordinates.errors %}
+            {% for error in form.given_gps_coordinates.errors %}
              <l1 style="color:red"> {{ error }}</l1>
             {% endfor %}
           </ul> 
         </div>
       </div>
-
-          </fieldset>
-
+    </fieldset>
   </form>
 </div>
 

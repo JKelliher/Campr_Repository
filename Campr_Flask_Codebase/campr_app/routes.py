@@ -1,6 +1,6 @@
 from flask import Flask, url_for, render_template, redirect
 from campr_app import app, db
-from campr_app.forms import camp_site_entry_form, new_user_form
+from campr_app.forms import camp_site_entry_form, new_user_form, search_form
 from campr_app.models import CampSites
 
 
@@ -35,8 +35,12 @@ def new_campsite():
         return redirect(url_for('home'))
     return render_template('new_campsite.html', form=form)
 
-@app.route('/search/')
+@app.route('/search/', methods=['GET', 'POST'])
 def search():
+    form = search_form()
+    if form.validate_on_submit():
+        print('Here are the campsites near your coordinates!')
+        print('connect search function and results page here')
     return render_template('search.html')
 
 @app.route('/search_result/')
