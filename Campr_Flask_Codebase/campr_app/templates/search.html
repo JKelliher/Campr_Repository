@@ -1,14 +1,31 @@
 {% extends "layout_sticky.html" %}
 {% block content %}
-<div class="container">
-  <h2>Search</h2>
-  <form>
-    <label for="search">Search Nearby (GPS Coordinates):</label><br>
-    <input type="text" id="Site_name" name="Site_name"><br>
 
-    <a href=" {{ url_for('search_result') }} ">Submit</a></br>
+<div class="container">
+  <h2 id="new_site_header">Create a New Site:</h2>
+  <form method="POST" action="">
+    
+    <!-- adding CRF token -->
+    {{ form.hidden_tag() }} 
+
+
+    <fieldset class="form-group">
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          {{ form.gps_coordinates.label(class="form-control-label") }}
+          {{ form.gps_coordinates(class="form-control form-control-lg") }}
+          <ul> 
+            {% for error in form.gps_coordinates.errors %}
+             <l1 style="color:red"> {{ error }}</l1>
+            {% endfor %}
+          </ul> 
+        </div>
+      </div>
+
+          </fieldset>
+
   </form>
-  
-  <a href=" {{ url_for('home') }} ">back</a></br>
 </div>
+
   {% endblock content %}
