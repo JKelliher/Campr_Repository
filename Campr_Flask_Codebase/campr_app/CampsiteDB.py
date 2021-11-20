@@ -203,13 +203,13 @@ def bestsites(dbname):
 
 
 #hard coded for testing
-def main():   
-    create("CampTableDB.db")
-    fill("CampTableDB.db")
-    #nearby("CampTableDB", '43.21591, -111.06096')
-    #addCampsite("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "05/20/19", 5, "Campground", "Y", "N", "somenotes", "https://github.com/JKelliher/Campr_Repository/blob/main/Campr_Images/Campr%20Images/IMG_1655.JPG")
-    #deletesite("CampTableDB", 12)
-    #bestsites("CampTableDB")
-    #above commented-out code for testing purposes!
-main()
+# def main():   
+#     create("CampTableDB.db")
+#     fill("CampTableDB.db")
+#     #nearby("CampTableDB", '43.21591, -111.06096')
+#     #addCampsite("CampTableDB", "newCamp", "40.04249, -105.02470", "Denver", "CO", "05/20/19", 5, "Campground", "Y", "N", "somenotes", "https://github.com/JKelliher/Campr_Repository/blob/main/Campr_Images/Campr%20Images/IMG_1655.JPG")
+#     #deletesite("CampTableDB", 12)
+#     #bestsites("CampTableDB")
+#     #above commented-out code for testing purposes!
+# main()
 
