@@ -61,6 +61,17 @@ def profile():
     return render_template('profile.html')
 
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    form = new_user_form()
+    if form.validate_on_submit():
+        return """
+        <h1> Welcome to Campr. </h1>
+        <a href="/new_campsite">Click Here to Submit Your First Site!</a>
+        """
+    return render_template('new_user.html', form=form)
+
+
 @app.route('/edit_profile/')
 def edit_profile():
     return render_template('edit_profile.html')
