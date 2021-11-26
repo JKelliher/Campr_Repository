@@ -48,7 +48,7 @@
         <tbody>
           <tr>
             {% for camp_site in camp_sites %}
-            <td>{{ camp_site.Site_Name }}</td>
+            <td><a href="{{ url_for('campsite', idcamp=camp_site.idCamp) }}">{{ camp_site.Site_Name }}</a></td>
             <td>{{ camp_site.GPS }}</td>
             <td>{{ camp_site.City }}</td>
             <td>{{ camp_site.State }}</td>

@@ -14,6 +14,10 @@ h1, h2, h3, h4 h5{
 background-color: #525f41;
 }
 
+.danger-btn {
+  background-color: #851837;
+}
+
 .site-header .navbar-nav .nav-link {
 color: #e9eff2;
 }

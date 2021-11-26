@@ -1,0 +1,89 @@
+{% extends "layout_sticky.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col order-1">
+      <a href=" {{ url_for('search') }} ">
+        <img class ="buttonimage" src="../static/images/lakecamping.jpg">
+        <div class="centered">SEARCH NEARBY</div>
+      </a>
+    </div>
+
+    <div class="col order-2">
+      <a href=" {{ url_for('new_campsite') }} ">
+        <img class ="buttonimage" src="../static/images/cascade.jpg">
+        <div class="centered" align="centered">CREATE NEW SITE</div>
+      </a>
+    </div>
+    
+    <div class="col order-3">
+      <a href=" {{ url_for('profile') }} ">
+        <img class ="buttonimage" src="../static/images/campfire.jpg">
+        <div class="centered" align="centered">PROFILE</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="content-section">
+    <h3>Campsite - {{ campsite.Site_Name }}</h3>
+    <div>
+        <a class="btn btn-secondary pull-right btn-sm mt-1 mb-1 bg-steel" href="{{ url_for('update_campsite', idcamp=campsite.idCamp) }}">Update</a>
+        <button type="button" class="btn btn-secondary danger-btn pull-right btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Campsite Name</th>
+            <th scope="col">GPS Location</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Date</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Type</th>
+            <th scope="col">Restrooms</th>
+            <th scope="col">Fees</th>
+            <th scope="col">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>{{ campsite.Site_Name }}</td>
+        <td>{{ campsite.GPS }}</td>
+        <td>{{ campsite.City }}</td>
+        <td>{{ campsite.State }}</td>
+        <td>{{ campsite.Date }}</td>
+        <td>{{ campsite.Rating }}</td>
+        <td>{{ campsite.Type }}</td>
+        <td>{{ campsite.Restrooms }}</td>
+        <td>{{ campsite.Fees }}</td>
+        <td>{{ campsite.Notes }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+ <!-- Modal -->
+ <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete Campsite?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form action="{{ url_for('delete_campsite', camp_id=campsite.idCamp) }}" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}

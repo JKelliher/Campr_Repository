@@ -1,7 +1,6 @@
 {% extends "layout_sticky.html" %}
 {% block content %}
 <div class="container">
-  <h2 id="new_site_header">Create a New Site:</h2>
   <form method="POST" action="">
     
     <!-- adding CRF token -->
@@ -9,155 +8,155 @@
 
 
     <fieldset class="form-group">
-
-      <div class=form-row>
-        <div class="form-group col-md-12">
-          {{ form.site_name.label(class="form-control-label") }}
-          {{ form.site_name(class="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.site_name.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
+      <legend class="border-bottom mb-4">{{ legend }}</legend>
+        <div class=form-row>
+          <div class="form-group col-md-12">
+            {{ form.site_name.label(class="form-control-label") }}
+            {{ form.site_name(class="form-control form-control-lg") }}
+            <ul> 
+              {% for error in form.site_name.errors %}
+              <l1 style="color:red"> {{ error }}</l1>
+              {% endfor %}
+            </ul> 
+          </div>
         </div>
-      </div>
-      
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          {{ form.city.label(class="form-control-label") }}
-          {{ form.city(class="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.city.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-
-        <div class="form-group col-md-2">
-          {{ form.state.label(class="form-control-label") }}
-          {{ form.state(class="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.state.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          {{ form.gps_coordinates.label(class="form-control-label") }}
-          {{ form.gps_coordinates(class="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.gps_coordinates.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          {{ form.date_of_visit.label(class="form-control-label") }}
-          {{ form.date_of_visit(class="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.date_of_visit.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-      </div>
-
-      <div class="form-group">
-        {{ form.restrooms.label(class="form-check-label") }}
-          
-        <table>
-          {% for subfield in form.restrooms %}
-          <tr>
-            <td style="vertical-align: top;">{{ subfield }}</td>
-            <td style="vertical-align: top;">{{ subfield.label }}</td>
-          </tr>
-          {% endfor %}
-        </table>
-        <ul> 
-            {% for error in form.restrooms.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          {{ form.type_of_campsite.label(class="form-control-label") }}
-          {{ form.type_of_campsite(class_="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.type_of_campsite.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-      </div>
-
-      <div class="form-group">
-        {{ form.fees.label(class="form-check-label") }}
-          
-        <table>
-          {% for subfield in form.fees %}
-          <tr>
-            <td style="vertical-align: top;">{{ subfield }}</td>
-            <td style="vertical-align: top;">{{ subfield.label }}</td>
-          </tr>
-          {% endfor %}
-        </table>
-        <ul> 
-            {% for error in form.fees.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          {{ form.rating.label(class="form-control-label") }}
-          {{ form.rating(class_="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.rating.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-12">
-          {{ form.notes.label(class="form-control-label") }}
-          {{ form.notes(class="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.notes.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-      </div>
-
-
-      <div class="form-group">
-        {{ form.upload_photo.label(class="form-label") }}
-        {{ form.upload_photo(class="form-control") }}
-          
-        <ul> 
-          {% for error in form.fees.errors %}
-           <l1 style="color:red"> {{ error }}</l1>
-          {% endfor %}
-        </ul> 
-      
-      </div>
-
-
-      <div class="form-group">
-        {{ form.submit(class="btn btn-primary mb-4") }}
         
-      </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            {{ form.city.label(class="form-control-label") }}
+            {{ form.city(class="form-control form-control-lg") }}
+            <ul> 
+              {% for error in form.city.errors %}
+              <l1 style="color:red"> {{ error }}</l1>
+              {% endfor %}
+            </ul> 
+          </div>
+
+          <div class="form-group col-md-2">
+            {{ form.state.label(class="form-control-label") }}
+            {{ form.state(class="form-control form-control-lg") }}
+            <ul> 
+              {% for error in form.state.errors %}
+              <l1 style="color:red"> {{ error }}</l1>
+              {% endfor %}
+            </ul> 
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            {{ form.gps_coordinates.label(class="form-control-label") }}
+            {{ form.gps_coordinates(class="form-control form-control-lg") }}
+            <ul> 
+              {% for error in form.gps_coordinates.errors %}
+              <l1 style="color:red"> {{ error }}</l1>
+              {% endfor %}
+            </ul> 
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            {{ form.date_of_visit.label(class="form-control-label") }}
+            {{ form.date_of_visit(class="form-control form-control-lg") }}
+            <ul> 
+              {% for error in form.date_of_visit.errors %}
+              <l1 style="color:red"> {{ error }}</l1>
+              {% endfor %}
+            </ul> 
+          </div>
+        </div>
+
+        <div class="form-group">
+          {{ form.restrooms.label(class="form-check-label") }}
+            
+          <table>
+            {% for subfield in form.restrooms %}
+            <tr>
+              <td style="vertical-align: top;">{{ subfield }}</td>
+              <td style="vertical-align: top;">{{ subfield.label }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+          <ul> 
+              {% for error in form.restrooms.errors %}
+              <l1 style="color:red"> {{ error }}</l1>
+              {% endfor %}
+            </ul> 
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            {{ form.type_of_campsite.label(class="form-control-label") }}
+            {{ form.type_of_campsite(class_="form-control form-control-lg") }}
+            <ul> 
+              {% for error in form.type_of_campsite.errors %}
+              <l1 style="color:red"> {{ error }}</l1>
+              {% endfor %}
+            </ul> 
+          </div>
+        </div>
+
+        <div class="form-group">
+          {{ form.fees.label(class="form-check-label") }}
+            
+          <table>
+            {% for subfield in form.fees %}
+            <tr>
+              <td style="vertical-align: top;">{{ subfield }}</td>
+              <td style="vertical-align: top;">{{ subfield.label }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+          <ul> 
+              {% for error in form.fees.errors %}
+              <l1 style="color:red"> {{ error }}</l1>
+              {% endfor %}
+            </ul> 
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            {{ form.rating.label(class="form-control-label") }}
+            {{ form.rating(class_="form-control form-control-lg") }}
+            <ul> 
+              {% for error in form.rating.errors %}
+              <l1 style="color:red"> {{ error }}</l1>
+              {% endfor %}
+            </ul> 
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            {{ form.notes.label(class="form-control-label") }}
+            {{ form.notes(class="form-control form-control-lg") }}
+            <ul> 
+              {% for error in form.notes.errors %}
+              <l1 style="color:red"> {{ error }}</l1>
+              {% endfor %}
+            </ul> 
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          {{ form.upload_photo.label(class="form-label") }}
+          {{ form.upload_photo(class="form-control") }}
+            
+          <ul> 
+            {% for error in form.fees.errors %}
+            <l1 style="color:red"> {{ error }}</l1>
+            {% endfor %}
+          </ul> 
+        
+        </div>
+
+
+        <div class="form-group">
+          {{ form.submit(class="btn btn-primary bg-steel mb-4") }}
+          
+        </div>
   
     
     </fieldset>
