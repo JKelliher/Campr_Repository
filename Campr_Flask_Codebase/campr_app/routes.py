@@ -1,9 +1,9 @@
 from flask import Flask, url_for, render_template, redirect, flash, request
-from campr_app import app, db
+from campr_app import app, db, CampsiteDB
 from campr_app.forms import camp_site_entry_form, new_user_form, search_form
 from campr_app.models import CampSites
-import campr_app.CampsiteDB
-from CampsiteDB import nearby
+
+
 
 
 @app.route('/')
@@ -47,9 +47,9 @@ def search():
     form = search_form()
     if form.validate_on_submit():
         search_gps_coordinates = form.given_gps_coordinates.data
-        result_id = nearby('CampTableDB.db', search_gps_coordinates)
-        result = CampSites.query.filter(CampSites.idCamp == result_id).first()
-        return render_template('search_result.html', camp_site=result)
+        gps_result_id = CampsiteDB.nearby('campr_app/CampTableDB.db', search_gps_coordinates)
+        result = CampSites.query.filter(CampSites.idCamp == gps_result_id).all()
+        return render_template('search_result.html', camp_sites=result)
     return render_template('search.html', form=form)
 
 

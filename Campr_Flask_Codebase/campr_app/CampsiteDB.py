@@ -128,8 +128,8 @@ def addCampsite(dbname, site_name, GPS, City, State, Date, Rating, Type, Restroo
 
 
 
-def nearby(dbname, gps):
-    conn = sqlite3.connect(dbname)
+def nearby(db_name, gps):
+    conn = sqlite3.connect(db_name)
     c = conn.cursor()
 
     #Check for GPS to be in correct format...
@@ -142,13 +142,13 @@ def nearby(dbname, gps):
     compsite = None
     closest = 1000000
     #split the input string into lat, long
-    lat, long = gps.split(", ")
+    lat, longv = gps.split(", ")
     for row in c.execute("SELECT * FROM CampSites;"):
         sitegps = row[2]
         #use the sum of absolute values of lat-lat and long-long of compsite and GPS to determine closest site
         sitelat, sitelong = sitegps.split(", ")
         latval = abs(float(lat) - float(sitelat))
-        longval = abs(float(long) - float(sitelong))
+        longval = abs(float(longv) - float(sitelong))
         dval = latval + longval
         #if our current site is closer than anythign we have seen before update closest.
         if dval < closest:
