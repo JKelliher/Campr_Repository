@@ -3,7 +3,7 @@ from campr_app import app, db
 from campr_app.forms import camp_site_entry_form, new_user_form, search_form
 from campr_app.models import CampSites
 import campr_app.CampsiteDB
-
+from CampsiteDB import nearby
 
 
 @app.route('/')
@@ -46,7 +46,10 @@ def new_campsite():
 def search():
     form = search_form()
     if form.validate_on_submit():
-        return '<h2> Successful campsite search with coordinates: {}.</h2>'.format(form.given_gps_coordinates.data)
+        search_gps_coordinates = form.given_gps_coordinates.data
+        result_id = nearby('CampTableDB.db', search_gps_coordinates)
+        result = CampSites.query.filter(CampSites.idCamp == result_id).first()
+        return render_template('search_result.html', camp_site=result)
     return render_template('search.html', form=form)
 
 

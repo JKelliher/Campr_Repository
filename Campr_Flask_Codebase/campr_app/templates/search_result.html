@@ -1,8 +1,7 @@
-{% extends "layout_sticky.html" %}
+{% extends "layout.html" %}
 {% block content %}
 <div class="container-fluid" alight="center">
   <h2>Search Results</h2>
-  <p>PLACE HOLDER for search results to be displayed</p>
 
   <div class="container-fluid">
     <div class="content-section">
@@ -17,29 +16,33 @@
               <th scope="col">State</th>
               <th scope="col">Date</th>
               <th scope="col">Rating</th>
+              <th scope="col">Type</th>
+              <th scope="col">Restrooms</th>
+              <th scope="col">Fees</th>
               <th scope="col">Notes</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              {% for camp_site in camp_sites %}
-              <td>{{ camp_site.site_name }}</td>
-              <td>{{ camp_site.gps }}</td>
-              <td>{{ camp_site.city }}</td>
-              <td>{{ camp_site.state_abr }}</td>
-              <td>{{ camp_site.date }}</td>
-              <td>{{ camp_site.rating }}</td>
-              <td>{{ camp_site.notes }}</td>
+              <td><a href="{{ url_for('campsite', idcamp=camp_site.idCamp) }}">{{ camp_site.Site_Name }}</a></td>
+              <td>{{ camp_site.GPS }}</td>
+              <td>{{ camp_site.City }}</td>
+              <td>{{ camp_site.State }}</td>
+              <td>{{ camp_site.Date }}</td>
+              <td>{{ camp_site.Rating }}</td>
+              <td>{{ camp_site.Type }}</td>
+              <td>{{ camp_site.Restrooms }}</td>
+              <td>{{ camp_site.Fees }}</td>
+              <td>{{ camp_site.Notes }}</td>
             </tr>
-            {% endfor %}
           </tbody>
         </table>
       </div>
     </div>
   </div>
   
-  <a href=" {{ url_for('search') }} ">Search</a><br>
-  <a href=" {{ url_for('home') }} ">Home</a><br>
+  <a href=" {{ url_for('search') }} ">Back</a><br>
+
   
 </div>
 

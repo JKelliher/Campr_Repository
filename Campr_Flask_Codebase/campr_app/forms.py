@@ -20,8 +20,8 @@ class camp_site_entry_form(FlaskForm):
 	state = SelectField('State:', choices=states, validators =[InputRequired()])
 
 	gps_coordinates = StringField('GPS Coordinates:', 
-		validators =[Regexp('((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))', message="Please enter GPS Coordinates in format: dd,dddd, dd,dddd")],
-		render_kw={"placeholder":"Enter GPS Coordinates format: dd,dddd, dd,dddd"})
+		validators =[Regexp('((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))', message="Please enter GPS Coordinates in format: dd.dddd, dd.dddd")],
+		render_kw={"placeholder":"Enter GPS Coordinates format: dd.dddd, dd.dddd"})
 
 	date_of_visit = StringField('Date Of Visit:', 
 		validators =[Regexp('(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.][0-9][0-9]$', message="Please Provide Date in mm/dd/yy format.")],
@@ -64,5 +64,5 @@ class new_user_form(FlaskForm): #wtforms to handle the new user
 
 class search_form(FlaskForm): #wtforms to handle the searc_nearby functionality
     given_gps_coordinates = StringField('GPS Coordinates:', 
-		validators =[Regexp('((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))', message="Please enter GPS Coordinates in format: dd,dddd, dd,dddd")],
-		render_kw={"placeholder":"Enter GPS Coordinates format: dd,dddd, dd,dddd"})
+		validators =[Regexp('((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))', message="Please enter GPS Coordinates in format: dd.dddd, dd.dddd")],
+		render_kw={"placeholder":"Enter GPS Coordinates format: dd.dddd, dd.dddd"})
