@@ -20,6 +20,7 @@
               <th scope="col">Restrooms</th>
               <th scope="col">Fees</th>
               <th scope="col">Notes</th>
+              <th scope="col">Image</th>
             </tr>
           </thead>
           <tbody>
@@ -35,6 +36,7 @@
               <td>{{ camp_site.Restrooms }}</td>
               <td>{{ camp_site.Fees }}</td>
               <td>{{ camp_site.Notes }}</td>
+              <td><img class="tableimage" src="../static/images/{{ camp_site.Image }}"></td>
             </tr>
           {% endfor %}
           </tbody>

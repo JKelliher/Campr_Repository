@@ -1,3 +1,4 @@
+import os
 from flask import Flask, url_for, render_template, redirect, flash, request
 from campr_app import app, db, CampsiteDB
 from campr_app.forms import camp_site_entry_form, new_user_form, search_form
@@ -34,7 +35,10 @@ def new_campsite():
     form = camp_site_entry_form()
     if form.validate_on_submit():
         print('validate started')
-        campsite = CampSites(Site_Name=form.site_name.data, GPS=form.gps_coordinates.data, City=form.city.data, State=form.state.data, Date=form.date_of_visit.data, Rating=form.rating.data, Type=form.type_of_campsite.data, Restrooms=form.restrooms.data, Fees=form.fees.data, Notes=form.notes.data, Image=form.upload_photo.data)
+        user_image = form.upload_photo.data
+        path = os.path.join('campr_app/static/upload_images', user_image.filename)
+        user_image.save(path)
+        campsite = CampSites(Site_Name=form.site_name.data, GPS=form.gps_coordinates.data, City=form.city.data, State=form.state.data, Date=form.date_of_visit.data, Rating=form.rating.data, Type=form.type_of_campsite.data, Restrooms=form.restrooms.data, Fees=form.fees.data, Notes=form.notes.data, Image=user_image.filename)
         db.session.add(campsite)
         db.session.commit()
         return redirect(url_for('home'))

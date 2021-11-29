@@ -1,7 +1,7 @@
 {% extends "layout_sticky.html" %}
 {% block content %}
 <div class="container">
-  <form method="POST" action="">
+  <form method="POST" action="" enctype="multipart/form-data">
     
     <!-- adding CRF token -->
     {{ form.hidden_tag() }} 
