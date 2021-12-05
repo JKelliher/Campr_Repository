@@ -4,6 +4,12 @@ from werkzeug.utils import secure_filename
 from wtforms import StringField, SubmitField, SelectField, TextAreaField, RadioField, BooleanField
 from wtforms.validators import DataRequired, InputRequired, Length, Regexp
 
+states = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN',
+			  'IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV',
+			  'NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN',
+			  'TX','UT','VT','VA','WA','WV','WI','WY']
+searches = ['Search By:', 'GPS Coordinates', 'City', 'State']
+
 class camp_site_entry_form(FlaskForm):
 	site_name = StringField('Site Name:', 
 		validators =[InputRequired(), Length(min=2, max=50)], 
@@ -62,7 +68,11 @@ class new_user_form(FlaskForm): #wtforms to handle the new user
  
 
 
-class search_form(FlaskForm): #wtforms to handle the searc_nearby functionality
-    given_gps_coordinates = StringField('GPS Coordinates:', 
-		validators =[Regexp('((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))|', message="Please enter GPS Coordinates in format: dd.dddd, dd.dddd")],
+class search_form(FlaskForm):
+
+    searchby = SelectField('Search By:', choices=searches)
+    given_gps_coordinates = StringField('GPS Coordinates:',
 		render_kw={"placeholder":"Enter GPS Coordinates format: dd.dddd, dd.dddd"})
+    state = SelectField('State:', choices=states)
+    city = StringField('City:', 
+		render_kw={"placeholder":"Enter City Name"})

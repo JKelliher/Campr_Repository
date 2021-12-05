@@ -54,10 +54,18 @@ def new_campsite():
 def search():
     form = search_form()
     if form.validate_on_submit():
-        search_gps_coordinates = form.given_gps_coordinates.data
-        gps_result_id = CampsiteDB.nearby('campr_app/CampTableDB.db', search_gps_coordinates)
-        result = CampSites.query.filter(CampSites.idCamp == gps_result_id).all()
-        return render_template('search_result.html', camp_sites=result)
+        if form.searchby.data == "GPS Coordinates":
+            search_gps_coordinates = form.given_gps_coordinates.data
+            gps_result_id = CampsiteDB.nearby('campr_app/CampTableDB.db', search_gps_coordinates)
+            result = CampSites.query.filter(CampSites.idCamp == gps_result_id).all()
+            return render_template('search_result.html', camp_sites=result)
+        if form.searchby.data == "State":
+            result = CampSites.query.filter(CampSites.State == form.state.data).all()
+            return render_template('search_result.html', camp_sites=result)
+        if form.searchby.data =="City":
+            result = CampSites.query.filter(CampSites.City == form.city.data).all()
+            return render_template('search_result.html', camp_sites=result)
+
     return render_template('search.html', form=form)
 
 
