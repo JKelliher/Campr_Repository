@@ -14,8 +14,8 @@ def login():
 
 @app.route('/home/')
 def home():
-    # camp_sites = CampSites.query.order_by(CampSites.Rating.desc()).limit(5)
-    camp_sites = CampSites.query.all()
+    camp_sites = CampSites.query.order_by(CampSites.Rating.desc()).limit(5)
+    # camp_sites = CampSites.query.all()
     return render_template('home.html', title='Home Page', camp_sites=camp_sites)
 
 
@@ -65,7 +65,7 @@ def search():
             return render_template('search_result_sticky.html', camp_sites=result)
         if form.searchby.data =="City":
             result = CampSites.query.filter(CampSites.City == form.city.data).all()
-            return render_template('search_result.html', camp_sites=result)
+            return render_template('search_result_sticky.html', camp_sites=result)
 
     return render_template('search.html', form=form)
 
