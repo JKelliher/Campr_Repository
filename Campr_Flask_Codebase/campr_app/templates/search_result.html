@@ -14,12 +14,8 @@
               <th scope="col">GPS Location</th>
               <th scope="col">City</th>
               <th scope="col">State</th>
-              <th scope="col">Date</th>
               <th scope="col">Rating</th>
               <th scope="col">Type</th>
-              <th scope="col">Restrooms</th>
-              <th scope="col">Fees</th>
-              <th scope="col">Notes</th>
               <th scope="col">Image</th>
             </tr>
           </thead>
@@ -30,12 +26,8 @@
               <td>{{ camp_site.GPS }}</td>
               <td>{{ camp_site.City }}</td>
               <td>{{ camp_site.State }}</td>
-              <td>{{ camp_site.Date }}</td>
               <td>{{ camp_site.Rating }}</td>
               <td>{{ camp_site.Type }}</td>
-              <td>{{ camp_site.Restrooms }}</td>
-              <td>{{ camp_site.Fees }}</td>
-              <td>{{ camp_site.Notes }}</td>
               <td><img class="tableimage" src="../static/upload_images/{{ camp_site.Image }}"></td>
             </tr>
           {% endfor %}
@@ -45,7 +37,10 @@
     </div>
   </div>
   
-  <a href=" {{ url_for('search') }} ">Back</a><br>
+  <a href=" {{ url_for('search') }} ">
+    <button class="btn btn-default" style="margin-bottom:15px;"> Back </button> 
+  </a>
+  <br>
 
   
 </div>
