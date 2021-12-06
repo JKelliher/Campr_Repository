@@ -60,6 +60,7 @@ def new_campsite():
         campsite = CampSites(Site_Name=form.site_name.data, GPS=form.gps_coordinates.data, City=form.city.data, State=form.state.data, Date=form.date_of_visit.data, Rating=form.rating.data, Type=form.type_of_campsite.data, Restrooms=form.restrooms.data, Fees=form.fees.data, Notes=form.notes.data, Image=image_return)
         db.session.add(campsite)
         db.session.commit()
+        flash('Campsite Successfully Added!', 'success')
         return redirect(url_for('home'))
     return render_template('new_campsite.html', form=form, legend='New Post')
 
@@ -136,7 +137,7 @@ def update_campsite(idcamp):
         except:
             image_return = "default.jpg"
         db.session.commit()
-        flash('Your post has been updated!', 'success')
+        flash('Campsite has been updated!', 'success')
         return redirect(url_for('campsite', idcamp=campsite.idCamp))
     elif request.method == 'GET':
         form.site_name.data = campsite.Site_Name 
@@ -158,7 +159,7 @@ def delete_campsite(camp_id):
     campsite = CampSites.query.get_or_404(camp_id)
     db.session.delete(campsite)
     db.session.commit()
-    flash('Your post has been deleted!', 'success')
+    flash('Campsite has been deleted!', 'success')
     return redirect(url_for('home'))
 
 @app.route('/logout')
