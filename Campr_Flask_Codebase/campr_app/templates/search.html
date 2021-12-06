@@ -1,87 +1,115 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="container">
-  <h2 id="new_site_header">Search for Campsites:</h2>
-
-
-
-
-  <form method="POST" action="">
-    
-    <!-- adding CRF token -->
-    {{ form.hidden_tag() }} 
-    
-
-    <fieldset class="form-group">
-
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          {{ form.searchby.label(class="form-control-label") }}
-          {{ form.searchby(class="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.searchby.errors %}
-            <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div id="GPS" style="display:none" class="form-group col-md-6">
-          {{ form.given_gps_coordinates.label(class="form-control-label") }}
-          {{ form.given_gps_coordinates(class="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.given_gps_coordinates.errors %}
-             <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div id="state" style="display:none" class="form-group col-md-2">
-          {{ form.state.label(class="form-control-label") }}
-          {{ form.state(class="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.state.errors %}
-            <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div id="city" style="display:none" class="form-group col-md-4">
-          {{ form.city.label(class="form-control-label") }}
-          {{ form.city(class="form-control form-control-lg") }}
-          <ul> 
-            {% for error in form.city.errors %}
-            <l1 style="color:red"> {{ error }}</l1>
-            {% endfor %}
-          </ul> 
-        </div>
-      </div>
-
-
-
+<div class="container" style="margin-bottom: 20px; margin-top: 10px;">
+  <div class="row">
+    <div class="col-6">
 
       <div class="container">
-        <div  id="searchb" class="row" style="display:none;">
-          <div class="col text-left">
-            <button class="btn btn-default"> Search </button> 
-          </div>
-        </div>
+        <h2 id="new_site_header">Search for Campsites:</h2>
+           
+           <label for="searchby">Search By:</label>
+           <select id="searchby" class="form-control col-md-9">
+              <option value="">Select...</option>
+              <option value="GPS Coordinates">GPS Coordinates</option>
+              <option value="City">City</option>
+              <option value="State">State</option>
+            <select>
+            <br>
+
+
+
+
+        <form id="GPS" style="display:none" method="POST" action="">
+          <!-- adding CRF token -->
+          {{ form1.hidden_tag() }} 
+          <fieldset class="form-group">
+
+            <div class="form-row">
+              <div class="form-group col-md-9">
+                {{ form1.given_gps_coordinates.label(class="form-control-label") }}
+                {{ form1.given_gps_coordinates(class="form-control form-control") }}
+                <ul> 
+                  {% for error in form1.given_gps_coordinates.errors %}
+                   <l1 style="color:red"> {{ error }}</l1>
+                  {% endfor %}
+                </ul> 
+              </div>
+            </div>
+            <div class="text-left">
+              <button class="btn btn-default" value="search1"> Search </button> 
+            </div>
+
+
+
+          </fieldset>
+        </form>
+
+
+
+
+
+
+
+        <form id="state" style="display:none" method="POST" action="">
+          <!-- adding CRF token -->
+          {{ form2.hidden_tag() }} 
+          <fieldset class="form-group">
+
+            <div class="form-row">
+              <div  class="form-group col-md-6">
+                {{ form2.state.label(class="form-control-label") }}
+                {{ form2.state(class="form-control form-control") }}
+                <ul> 
+                  {% for error in form2.state.errors %}
+                  <l1 style="color:red"> {{ error }}</l1>
+                  {% endfor %}
+                </ul> 
+              </div>
+            </div>
+            <div class="text-left">
+              <button class="btn btn-default" value="search2"> Search </button> 
+            </div>
+
+
+          </fieldset>
+        </form>
+
+
+
+        <form id="city" style="display:none" method="POST" action="">
+          <!-- adding CRF token -->
+          {{ form3.hidden_tag() }} 
+          <fieldset class="form-group">
+
+            <div class="form-row">
+              <div  class="form-group col-md-8">
+                {{ form3.city.label(class="form-control-label") }}
+                {{ form3.city(class="form-control form-control") }}
+                <ul> 
+                  {% for error in form3.city.errors %}
+                  <l1 style="color:red"> {{ error }}</l1>
+                  {% endfor %}
+                </ul> 
+              </div>
+            </div>
+            <div class="text-left">
+              <button class="btn btn-default" value="search3"> Search </button> 
+            </div>
+
+
+          </fieldset>
+        </form>
       </div>
+    </div>
 
+    <div class="col-6">
+      <img class ="buttonimage" src="../static/images/search_image.jpg">
+    </div>
 
-      
-    </fieldset>
-
-
-
-  </form>
+  </div>
 </div>
+
 
 <script>
   let search_select = document.getElementById('searchby');
@@ -92,25 +120,25 @@
     city = document.getElementById("city")
     state = document.getElementById("state")
     gps = document.getElementById("GPS")
-    searchb = document.getElementById("searchb")
+    
 
     city.style.display = "none"
     state.style.display = "none"
     gps.style.display = "none"
-    searchb.style.display = "none"
+
 
     if(search_type === "GPS Coordinates"){
       gps.style.display = "block"
-      searchb.style.display = "block"
+
     }
 
     if(search_type === "City"){
       city.style.display = "block"
-      searchb.style.display = "block"
+
     }
     if(search_type === "State"){
       state.style.display = "block"
-      searchb.style.display = "block"
+
     }
     
 

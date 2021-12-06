@@ -89,11 +89,16 @@ class login_form(FlaskForm):
 
 	submit = SubmitField('Login')
 
-class search_form(FlaskForm):
 
-    searchby = SelectField('Search By:', choices=searches)
-    given_gps_coordinates = StringField('GPS Coordinates:',
+class search_form1(FlaskForm):
+    given_gps_coordinates = StringField('GPS Coordinates:', 
+		validators =[Regexp('((?:[\+-]?[0-9]*[\.,][0-9]+)|(?:[\+-]?[0-9]+))', message="Please enter GPS Coordinates in format: dd.dddd, dd.dddd")],
 		render_kw={"placeholder":"Enter GPS Coordinates format: dd.dddd, dd.dddd"})
-    state = SelectField('State:', choices=states)
-    city = StringField('City:', 
+
+class search_form2(FlaskForm):
+	state = SelectField('State:', choices=states)
+
+class search_form3(FlaskForm):
+	city = StringField('City:', 
+		validators =[InputRequired(), Length(min=2, max=50)],
 		render_kw={"placeholder":"Enter City Name"})

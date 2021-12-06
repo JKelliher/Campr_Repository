@@ -1,7 +1,7 @@
 import os
 from flask import Flask, url_for, render_template, redirect, flash, request
 from campr_app import app, db, CampsiteDB, bcrypt
-from campr_app.forms import camp_site_entry_form, new_user_form, login_form, search_form
+from campr_app.forms import camp_site_entry_form, new_user_form, login_form, search_form1, search_form2, search_form3
 from campr_app.models import CampSites, User
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -68,21 +68,25 @@ def new_campsite():
 
 @app.route('/search/', methods=['GET', 'POST'])
 def search():
-    form = search_form()
-    if form.validate_on_submit():
-        if form.searchby.data == "GPS Coordinates":
-            search_gps_coordinates = form.given_gps_coordinates.data
-            gps_result_id = CampsiteDB.nearby('campr_app/CampTableDB.db', search_gps_coordinates)
-            result = CampSites.query.filter(CampSites.idCamp == gps_result_id).all()
-            return render_template('search_result.html', camp_sites=result)
-        if form.searchby.data == "State":
-            result = CampSites.query.filter(CampSites.State == form.state.data).all()
-            return render_template('search_result_sticky.html', camp_sites=result)
-        if form.searchby.data =="City":
-            result = CampSites.query.filter(CampSites.City == form.city.data).all()
-            return render_template('search_result_sticky.html', camp_sites=result)
+    form1 = search_form1()
+    form2 = search_form2()
+    form3 = search_form3()
 
-    return render_template('search.html', form=form)
+    if form1.validate_on_submit():
+        search_gps_coordinates = form1.given_gps_coordinates.data
+        gps_result_id = CampsiteDB.nearby('campr_app/CampTableDB.db', search_gps_coordinates)
+        result = CampSites.query.filter(CampSites.idCamp == gps_result_id).all()
+        return render_template('search_result.html', camp_sites=result)
+    
+    if form2.validate_on_submit():
+        result = CampSites.query.filter(CampSites.State == form2.state.data).all()
+        return render_template('search_result_sticky.html', camp_sites=result)
+    
+    if form3.validate_on_submit():
+        result = CampSites.query.filter(CampSites.City == form3.city.data).all()
+        return render_template('search_result_sticky.html', camp_sites=result)
+
+    return render_template('search.html', form1=form1, form2 = form2, form3=form3)
 
 
 
