@@ -1,35 +1,49 @@
 import os
 from flask import Flask, url_for, render_template, redirect, flash, request
-from campr_app import app, db, CampsiteDB
-from campr_app.forms import camp_site_entry_form, new_user_form, search_form
-from campr_app.models import CampSites
+from campr_app import app, db, CampsiteDB, bcrypt
+from campr_app.forms import camp_site_entry_form, new_user_form, login_form, search_form
+from campr_app.models import CampSites, User
+from flask_login import login_user, current_user, logout_user, login_required
 
 
 
 
-@app.route('/')
-@app.route('/login/')
+
+@app.route('/login/', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    form = login_form()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user, remember=form.remember.data)
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('home'))
+        else:
+            flash('Login Unsuccessful. Please check email and password', 'danger')
+    return render_template('login.html', title='Login', form=form)
 
+@app.route('/', methods=['GET', 'POST'])
 @app.route('/home/')
 def home():
     # camp_sites = CampSites.query.order_by(CampSites.Rating.desc()).limit(5)
     camp_sites = CampSites.query.all()
     return render_template('home.html', title='Home Page', camp_sites=camp_sites)
 
-
-@app.route('/new_user/', methods=['GET', 'POST'])
-def new_user():
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
     form = new_user_form()
     if form.validate_on_submit():
-        return """
-        <h1> Welcome to Campr. </h1>
-        <a href="/new_campsite">Click Here to Submit Your First Site!</a>
-        """
-    return render_template('new_user.html', form=form)
-
-
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        new_user = User(email=form.email.data, password=hashed_password)
+        db.session.add(new_user)
+        db.session.commit()
+        flash(f'Your accout has been created. You are now able to log in', 'success')
+        return redirect(url_for('login'))
+    return render_template('register.html', form=form)
 
 @app.route('/new_campsite/', methods=['GET', 'POST'])
 def new_campsite():
@@ -75,22 +89,10 @@ def search():
 def search_result():
     return render_template('search_result.html')
 
-
 @app.route('/profile/')
+@login_required
 def profile():
     return render_template('profile.html')
-
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    form = new_user_form()
-    if form.validate_on_submit():
-        return """
-        <h1> Welcome to Campr. </h1>
-        <a href="/new_campsite">Click Here to Submit Your First Site!</a>
-        """
-    return render_template('new_user.html', form=form)
-
 
 @app.route('/edit_profile/')
 def edit_profile():
@@ -150,4 +152,10 @@ def delete_campsite(camp_id):
     db.session.delete(campsite)
     db.session.commit()
     flash('Your post has been deleted!', 'success')
+    return redirect(url_for('home'))
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    flash('You have been successfully logged out', 'success')
     return redirect(url_for('home'))

@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from werkzeug.utils import secure_filename
-from wtforms import StringField, SubmitField, SelectField, TextAreaField, RadioField, BooleanField
-from wtforms.validators import DataRequired, InputRequired, Length, Regexp
+from wtforms import StringField, SubmitField, SelectField, TextAreaField, RadioField, BooleanField, PasswordField
+from wtforms.validators import DataRequired, InputRequired, Length, Regexp, Email, EqualTo, ValidationError
+from campr_app.models import User
 
 states = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN',
 			  'IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV',
@@ -56,17 +57,37 @@ class camp_site_entry_form(FlaskForm):
 
 class new_user_form(FlaskForm): #wtforms to handle the new user
 	email = StringField('Email: ',
-		validators =[InputRequired(), Length(min = 6, max = 35)],
+		validators =[InputRequired(), Length(min = 6, max = 35), Email()],
 		render_kw={"placeholder":"Email"})
 
-	password = StringField('Password: ',
+	password = PasswordField('Password: ',
 		validators=[InputRequired(), Length(min = 6, max = 25)],
 		render_kw={"placeholder":"Password"})
 
+	confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+
 	accept_rules = BooleanField('I accept the leave no trace principles',
 		validators = [InputRequired()])
- 
 
+	submit = SubmitField('Sign Up')
+
+	def validate_email(self, email):
+		user = User.query.filter_by(email=email.data).first()
+		if user:
+			raise ValidationError('Email address already associated with another account')
+ 
+class login_form(FlaskForm): 
+	email = StringField('Email: ',
+		validators =[InputRequired(), Length(min = 6, max = 35), Email()],
+		render_kw={"placeholder":"Email"})
+
+	password = PasswordField('Password: ',
+		validators=[InputRequired(), Length(min = 6, max = 25)],
+		render_kw={"placeholder":"Password"})
+	
+	remember = BooleanField('Remember Me')
+
+	submit = SubmitField('Login')
 
 class search_form(FlaskForm):
 
