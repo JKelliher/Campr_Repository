@@ -125,7 +125,14 @@ def update_campsite(idcamp):
         campsite.Restrooms = form.restrooms.data
         campsite.Fees = form.fees.data
         campsite.Notes = form.notes.data
-        campsite.Image = form.upload_photo.data
+        try:
+            user_image = form.upload_photo.data
+            path = os.path.join('campr_app/static/upload_images', user_image.filename)
+            user_image.save(path)
+            image_return = user_image.filename
+            campsite.Image = image_return
+        except:
+            image_return = "default.jpg"
         db.session.commit()
         flash('Your post has been updated!', 'success')
         return redirect(url_for('campsite', idcamp=campsite.idCamp))
