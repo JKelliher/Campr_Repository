@@ -1,24 +1,27 @@
 {% extends "layout_sticky.html" %}
 {% block content %}
 <div class="container-fluid" align="center"> 
-	<div class="container" align="left">
-		<img src="../static/images/profile.jpg" class="rounded float-left" alt="Profile Image" class="img-thumbnail" width="200px" height="200px" >
-	</div>
 	<div class="container" align="center">
 		<h2> <b>Email Associated with Account: </b> {{ current_user.email }}</h2>
 	</div>
+	<br><br>
+	<div class="container-fluid" align="center">
+		<h3> We are working on bringing more functionality to the profile page all the time! In the mean time, feel free to seach for sites or add sites! </h3>
 		<br> <br>
 		<br> <br>
 
 	<div class="row">
-		<div class="col order-1" style="height:20%; width:20%;">
+		<div class="col order-2" style="height: 200px">
+			<img src="../static/images/profile.jpg" title="Profile Picture" alt="Profile Image" class="img-thumbnail" width="200px" height="200px" >
+		</div>
+		<div class="col order-2"  style="height: 200px">
 		<a href=" {{ url_for('search') }} ">
-			<img class ="buttonimage" src="../static/images/intent.jpg">
+			<img class ="buttonimage" src="../static/images/bigbend.jpeg">
 			<div class="centered">SEARCH NEARBY</div>
 		</a>
 		</div>
 	
-		<div class="col order-2" style="height:20%; width:20%;">
+		<div class="col order-3" style="height: 200px">
 		<a href=" {{ url_for('new_campsite') }} ">
 			<img class ="buttonimage" src="../static/images/blacksandsbeach.jpeg">
 			<div class="centered" align="centered">CREATE NEW SITE</div>
