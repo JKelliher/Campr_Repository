@@ -119,4 +119,23 @@ font-weight: 500;
   text-align: center;
 }
 
+.header-section {
+  display: inline;
+  float: right;
+  margin-bottom: 5px;
+}
+
+.button-background {
+  background-color: #569E9A;
+  border: #569E9A;
+}
+
+.button-background:hover {
+  background-color: #2f6b68;
+}
+
+.button-background:active {
+  background-color: #2f6b68;
+}
+
 background: linear-gradient(to bottom,  rgba(255,255,255,0), white 100%);

@@ -27,6 +27,8 @@ def login():
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home/')
 def home():
+    if current_user.is_authenticated == False:
+        return redirect(url_for('login'))
     camp_sites = CampSites.query.order_by(CampSites.Rating.desc()).limit(5)
     # camp_sites = CampSites.query.all()
     return render_template('home.html', title='Home Page', camp_sites=camp_sites)

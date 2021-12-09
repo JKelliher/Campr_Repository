@@ -28,8 +28,8 @@
 
 <div class="container-fluid">
   <div class="content-section">
-    <h3>Campsite - {{ campsite.Site_Name }}</h3>
-    <div>
+    <h3 style="display: inline;">Campsite - {{ campsite.Site_Name }}</h3>
+    <div class="header-section">
         <a class="btn btn-secondary pull-right btn-sm mt-1 mb-1 bg-steel" href="{{ url_for('update_campsite', idcamp=campsite.idCamp) }}">Update</a>
         <button type="button" class="btn btn-secondary danger-btn pull-right btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
     </div>
