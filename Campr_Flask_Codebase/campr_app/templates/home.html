@@ -28,9 +28,9 @@
 
 <div class="container-fluid">
   <div class="content-section">
-    <h3>Top Campsites</h3>
+    <h3 align="centered">Top Campsites</h3>
     <div class="table-responsive">
-      <table class="table table-bordered">
+      <table class="table table-striped" style="vertical-align: middle;">
         <thead>
           <tr>
             <th scope="col">Campsite Name</th>
@@ -42,16 +42,16 @@
             <th scope="col">Image</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style="vertical-align: middle;">
           <tr>
             {% for camp_site in camp_sites %}
-              <td><a href="{{ url_for('campsite', idcamp=camp_site.idCamp) }}">{{ camp_site.Site_Name }}</a></td>
-              <td>{{ camp_site.GPS }}</td>
-              <td>{{ camp_site.City }}</td>
-              <td>{{ camp_site.State }}</td>
-              <td>{{ camp_site.Rating }}</td>
-              <td>{{ camp_site.Type }}</td>
-              <td><img class="tableimage" src="../static/upload_images/{{ camp_site.Image }}"></td>
+              <td style="vertical-align: middle;"><a href="{{ url_for('campsite', idcamp=camp_site.idCamp) }}">{{ camp_site.Site_Name }}</a></td>
+              <td style="vertical-align: middle;">{{ camp_site.GPS }}</td>
+              <td style="vertical-align: middle;">{{ camp_site.City }}</td>
+              <td style="vertical-align: middle;">{{ camp_site.State }}</td>
+              <td style="vertical-align: middle;">{{ camp_site.Rating }}</td>
+              <td style="vertical-align: middle;">{{ camp_site.Type }}</td>
+              <td style="vertical-align: middle;"><img class="tableimage" src="../static/upload_images/{{ camp_site.Image }}"></td>
           </tr>
           {% endfor %}
         </tbody>

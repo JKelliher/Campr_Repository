@@ -34,7 +34,7 @@
         <button type="button" class="btn btn-secondary danger-btn pull-right btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
     </div>
     <div class="table-responsive">
-      <table class="table table-bordered">
+      <table class="table">
         <thead>
           <tr>
             <th scope="col">Campsite Name</th>
@@ -44,26 +44,54 @@
             <th scope="col">Date</th>
             <th scope="col">Rating</th>
             <th scope="col">Type</th>
-            <th scope="col">Restrooms</th>
-            <th scope="col">Fees</th>
-            <th scope="col">Notes</th>
           </tr>
         </thead>
         <tbody>
-        <tr>
-        <td>{{ campsite.Site_Name }}</td>
-        <td>{{ campsite.GPS }}</td>
-        <td>{{ campsite.City }}</td>
-        <td>{{ campsite.State }}</td>
-        <td>{{ campsite.Date }}</td>
-        <td>{{ campsite.Rating }}</td>
-        <td>{{ campsite.Type }}</td>
-        <td>{{ campsite.Restrooms }}</td>
-        <td>{{ campsite.Fees }}</td>
-        <td>{{ campsite.Notes }}</td>
-        </tr>
+          <tr>
+            <td>{{ campsite.Site_Name }}</td>
+            <td>{{ campsite.GPS }}</td>
+            <td>{{ campsite.City }}</td>
+            <td>{{ campsite.State }}</td>
+            <td>{{ campsite.Date }}</td>
+            <td>{{ campsite.Rating }}</td>
+            <td>{{ campsite.Type }}</td>
+          </tr>
         </tbody>
       </table>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Restrooms</th>
+            <th scope="col">Fees</th>
+            <th scope="col" colspan="5">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ campsite.Restrooms }}</td>
+            <td>{{ campsite.Fees }}</td>
+            <td colspan="5">{{ campsite.Notes }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" colspan="1">Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="vertical-align: middle;" colspan="1"><img class="tableimage" src="../static/upload_images/{{ campsite.Image }}">
+          </tr>
+        </tbody>
+      </table>
+
+
+
     </div>
   </div>
 </div>
